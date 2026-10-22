@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ExpandedSceneSelector.scss';
+import './ExpandedSceneSelector.css';
 
 const ExpandedSceneSelector = (props) => (
   <div className='expanded-scene-selector'>

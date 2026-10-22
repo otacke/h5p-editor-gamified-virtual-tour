@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './InteractionsBar.scss';
+import './InteractionsBar.css';
 import { getLibraries, H5PContext } from '../../context/H5PContext.js';
 
 export default class InteractionsBar extends React.Component {

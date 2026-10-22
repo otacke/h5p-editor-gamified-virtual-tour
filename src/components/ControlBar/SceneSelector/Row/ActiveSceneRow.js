@@ -1,6 +1,6 @@
 import React from 'react';
 import { sceneType } from '../../../../types/types.js';
-import './ActiveSceneRow.scss';
+import './ActiveSceneRow.css';
 import { SceneTypes } from '../../../Scene/Scene.js';
 import PropTypes from 'prop-types';
 

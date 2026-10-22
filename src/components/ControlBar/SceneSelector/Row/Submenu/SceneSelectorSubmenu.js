@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SceneSelectorSubmenu.scss';
+import './SceneSelectorSubmenu.css';
 
 const SceneSelectorSubmenu = (props) => {
 

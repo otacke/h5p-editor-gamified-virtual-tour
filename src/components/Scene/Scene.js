@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NoScene from './NoScene.js';
-import './Scene.scss';
+import './Scene.css';
 import { H5PContext } from '../../context/H5PContext.js';
 import { initializeThreeSixtyPreview } from '../../h5phelpers/h5pComponents.js';
 

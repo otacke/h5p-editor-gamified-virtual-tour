@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SceneList from '../../../ControlBar/SceneSelector/SceneList.js';
-import './GoToSceneSelector.scss';
+import './GoToSceneSelector.css';
 
 const GoToSceneSelector = (props) => (
   <div className='go-to-scene-selector'>

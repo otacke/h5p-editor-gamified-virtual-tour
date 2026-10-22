@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './EditingDialog.scss';
+import './EditingDialog.css';
 
 const EditingDialog = (props) => {
   const titleClasses = [

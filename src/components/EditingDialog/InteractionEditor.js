@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import EditingDialog from './EditingDialog.js';
 import { H5PContext } from '../../context/H5PContext.js';
-import './InteractionEditor.scss';
+import './InteractionEditor.css';
 import { SceneTypes } from '../Scene/Scene.js';
 import { getDefaultLibraryParams, isGoToScene } from '../../h5phelpers/libraryParams.js';
 import { getSceneFromId } from '../../h5phelpers/sceneParams.js';

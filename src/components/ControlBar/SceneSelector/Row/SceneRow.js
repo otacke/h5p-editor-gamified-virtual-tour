@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { SceneTypes } from '../../../Scene/Scene.js';
-import './SceneRow.scss';
+import './SceneRow.css';
 import { getImageSource } from '../../../../context/H5PContext.js';
 import { H5PContext } from '../../../../context/H5PContext.js';
 

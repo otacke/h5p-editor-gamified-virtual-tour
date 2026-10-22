@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { H5PContext } from '../../../context/H5PContext.js';
-import './SceneSelector.scss';
+import './SceneSelector.css';
 import ActiveSceneRow from './Row/ActiveSceneRow.js';
 import ExpandedSceneSelector from './ExpandedSceneSelector.js';
 

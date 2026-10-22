@@ -4,7 +4,7 @@ import Scene, { SceneTypes } from './Scene/Scene.js';
 import ControlBar from './ControlBar/ControlBar.js';
 import SceneEditor, { SceneEditingType } from './EditingDialog/SceneEditor.js';
 import InteractionsBar from './InteractionsBar/InteractionsBar.js';
-import './Main.scss';
+import './Main.css';
 import InteractionEditor, { InteractionEditingType } from './EditingDialog/InteractionEditor.js';
 import { H5PContext } from '../context/H5PContext.js';
 import { deleteScene, getSceneFromId, setScenePositionFromCamera, updateScene } from '../h5phelpers/sceneParams.js';

@@ -1,0 +1,110 @@
+@import '../../../../styles/icons.css';
+
+.h5p-scene-row {
+  padding: 0.625em;
+  border: 1px solid #e0dede;
+  border-bottom-width: 0;
+  display: flex;
+}
+
+.h5p-scene-row .scene-selector-submenu {
+  display: none;
+}
+
+.h5p-scene-row.marked-scene {
+  background-color: #ddf0dd;
+  border-color: #72c967;
+  border-bottom-width: 1px;
+}
+
+.h5p-scene-row.no-top-border {
+  border-top: none;
+}
+
+.h5p-scene-row:hover {
+  background-color: #f5f5f5;
+  border-color: #e0dede;
+  cursor: pointer;
+}
+
+.h5p-scene-row:active {
+  background-color: #e8e8e8;
+  border-color: #e0dede;
+}
+
+.h5p-scene-row .thumbnail-wrapper {
+  display: flex;
+  position: relative;
+  width: 2.7em;
+  height: 2.1em;
+}
+
+.h5p-scene-row .scene-wrapper {
+  flex: 1;
+  display: inline-block;
+  margin: 0 0.75em;
+  vertical-align: top;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.h5p-scene-row.marked-scene:hover {
+  background-color: #bacdba;
+  border-color: #5baa55;
+}
+
+.h5p-scene-row:hover .scene-selector-submenu {
+  display: block;
+}
+
+.h5p-scene-row:hover .h5p-scene-name {
+  text-decoration: underline;
+}
+
+.h5p-scene-row .thumbnail-wrapper:before {
+  font-family: "360-image", sans-serif;
+  content: var(--icon-static-scene);
+  position: absolute;
+  background: white;
+  left: 0.2em;
+  top: 0.1em;
+  transform: translate(-50%,-50%);
+  font-size: 0.9em;
+}
+
+.h5p-scene-row .thumbnail-wrapper .scene-thumbnail {
+  width: 100%;
+  align-self: center;
+}
+
+.h5p-scene-row .scene-wrapper .h5p-scene-name {
+  font-size: 0.9em;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.h5p-scene-row .scene-wrapper .starting-scene {
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+.h5p-scene-row.marked-scene.checked:after {
+  font-family: "H5PFontAwesome4", sans-serif;
+  content: "\f00c";
+  font-size: 1.5em;
+  align-self: center;
+  margin-right: 0.5em;
+  color: #2c611a;
+}
+
+.h5p-scene-row .thumbnail-wrapper .scene-thumbnail.vertical {
+  height: 100%;
+  width: auto;
+}
+
+.h5p-scene-row.three-sixty .thumbnail-wrapper:before {
+  content: var(--icon-three-sixty-scene);
+}

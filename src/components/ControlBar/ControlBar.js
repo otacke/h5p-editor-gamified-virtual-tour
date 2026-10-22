@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { SceneEditingType } from '../EditingDialog/SceneEditor.js';
-import './ControlBar.scss';
+import './ControlBar.css';
 import { H5PContext } from '../../context/H5PContext.js';
 import { SceneTypes } from '../Scene/Scene.js';
 import { getSceneFromId } from '../../h5phelpers/sceneParams.js';

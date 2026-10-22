@@ -4,7 +4,7 @@ import { editingSceneType } from '../../types/types.js';
 import EditingDialog from './EditingDialog.js';
 import { H5PContext } from '../../context/H5PContext.js';
 import { SceneTypes } from '../Scene/Scene.js';
-import './SceneEditor.scss';
+import './SceneEditor.css';
 import { getSceneFromId } from '../../h5phelpers/sceneParams.js';
 import { createSceneForm } from '../../h5phelpers/forms/sceneForm.js';
 import { showConfirmationDialog } from '../../h5phelpers/h5pComponents.js';
