@@ -2,14 +2,14 @@
 
 .scene-selector-wrapper {
   position: relative;
-  margin-right: 0.5em;
-  width: 30em;
+  margin-right: 0.5rem;
+  width: 30rem;
 }
 
 .h5p-scene-selector {
   display: inline-flex;
-  font-size: 1em;
-  width: 30em;
+  font-size: 1rem;
+  width: 30rem;
 
   border: 1px solid #d1d1d1;
   cursor: pointer;
@@ -24,7 +24,7 @@
 
 .h5p-select-handle {
   background: #e6e6e8;
-  padding: 0.5em 0.75em;
+  padding: 0.5rem 0.75rem;
 }
 
 .h5p-scene-selector:hover {
@@ -61,5 +61,5 @@
 }
 
 .h5p-scene-selector.disabled .h5p-select-content {
-  padding: 0.6em;
+  padding: 0.6rem;
 }

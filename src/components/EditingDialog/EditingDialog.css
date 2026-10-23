@@ -12,35 +12,35 @@
   background: white;
   position: absolute;
   left: 50%;
-  top: 4em;
+  top: 4rem;
   transform: translateX(-50%);
-  width: calc(100% - 3em);
+  width: calc(100% - 3rem);
   max-width: 918px;
-  max-height: calc(100% - 6em);
+  max-height: calc(100% - 6rem);
   display: flex;
   flex-direction: column;
 }
 
 .h5p-editing-dialog-header {
-  padding: 0.75em 0.75em 0.75em 1.75em;
+  padding: 0.75rem 0.75rem 0.75rem 1.75rem;
   border-bottom: 1px solid #e3e3e3;
   display: flex;
   flex-shrink: 0;
 }
 
 .h5p-editing-dialog-body {
-  padding: 1.75em;
+  padding: 1.75rem;
   overflow: auto;
 }
 
 .h5peditor-semi-fullscreen .h5p-editing-dialog {
-  top: 1.5em;
-  max-height: calc(100% - 3em);
+  top: 1.5rem;
+  max-height: calc(100% - 3rem);
 }
 
 .h5p-editing-dialog-header .title {
   flex: 1;
-  font-size: 1.125em;
+  font-size: 1.125rem;
   align-self: center;
 }
 
@@ -57,20 +57,20 @@
 }
 
 .h5p-editing-dialog-header button {
-  font-size: 0.875em;
-  padding: 0.75em 2em;
+  font-size: 0.875rem;
+  padding: 0.65625rem 1.75rem;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .h5p-editing-dialog-header button:not(:first-of-type) {
-  margin-left: 0.5em;
+  margin-left: 0.4375rem;
 }
 
 .h5p-editing-dialog-header .title:before {
-  margin-right: 0.75em;
-  font-size: 1.25em;
+  margin-right: 1.0546875rem;
+  font-size: 1.40625rem;
   vertical-align: text-bottom;
 }
 

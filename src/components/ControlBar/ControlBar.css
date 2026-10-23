@@ -1,8 +1,8 @@
 .h5p-new-scene-button {
   display: inline-flex;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
 
-  font-size: 1em;
+  font-size: 1rem;
   color: #ffffff;
 
   background: #475ec4;
@@ -13,7 +13,7 @@
 
 .h5p-control-bar {
   display: flex;
-  margin-top: 0.75em;
+  margin-top: 0.75rem;
 }
 
 .button-wrapper {
@@ -30,12 +30,12 @@
 }
 
 .set-starting-position-button {
-  padding: 0.5em 1em;
-  border: 0.125em solid transparent;
+  padding: 0.4375rem 0.875rem;
+  border: 0.109375rem solid transparent;
   background: #000;
   color: #fff;
   opacity: 0.8;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: border-color 100ms, opacity 100ms;
 }
@@ -45,14 +45,14 @@
 }
 
 .button-wrapper .tooltip {
-  padding: 0.25em 1em;
-  font-size: 0.875em;
+  padding: 0.21875rem 0.875rem;
+  font-size: 0.875rem;
   background: #000;
   color: #fff;
   position: absolute;
   bottom: 200%;
   z-index: 11;
-  right: -0.5em;
+  right: -0.4375rem;
   line-height: 1.75;
   box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px;
   pointer-events: none;
@@ -81,8 +81,8 @@
   background: #000;
   box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px;
   content: " ";
-  width: 0.75em;
-  height: 0.75em;
+  width: 0.65625rem;
+  height: 0.65625rem;
   position: absolute;
   right: 0;
   top: 100%;
@@ -90,7 +90,7 @@
 }
 
 .button-wrapper .tooltip .text-wrapper {
-  max-width: 30em;
+  max-width: 26.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -101,7 +101,7 @@
 }
 
 .h5p-editor-gamified-virtual-tour-wrapper.mobile .buttons-wrapper {
-  margin-top: 0.75em;
+  margin-top: 0.75rem;
 }
 
 .button-wrapper.not-disabled:hover .tooltip {

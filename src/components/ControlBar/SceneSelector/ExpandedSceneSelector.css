@@ -1,5 +1,5 @@
 .expanded-scene-selector {
-  max-height: 33.5em;
+  max-height: 33.5rem;
   width: 100%;
 
   position: absolute;
@@ -16,12 +16,12 @@
 }
 
 .expanded-scene-selector .header {
-  padding: 0.75em;
+  padding: 0.75rem;
   border: 1px solid #d1d1d1;
   border-bottom: none;
 }
 
 .expanded-scene-selector .header .title {
-  font-size: 1.125em;
+  font-size: 1.125rem;
   font-weight: bold;
 }
