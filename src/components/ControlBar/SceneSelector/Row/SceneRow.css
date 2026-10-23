@@ -6,49 +6,6 @@
   border-bottom-width: 0;
   display: flex;
 
-  &.marked-scene {
-    background-color: #ddf0dd;
-    border-color: #72c967;
-    border-bottom-width: 1px;
-  }
-
-  &.no-top-border {
-    border-top: none;
-  }
-
-  &:hover {
-    background-color: #f5f5f5;
-    border-color: #e0dede;
-    cursor: pointer;
-
-    .scene-selector-submenu {
-      display: block;
-    }
-
-    .scene-wrapper .h5p-scene-name {
-      text-decoration: underline;
-    }
-  }
-
-  &:active {
-    background-color: #e8e8e8;
-    border-color: #e0dede;
-  }
-
-  &.marked-scene:hover {
-    background-color: #bacdba;
-    border-color: #5baa55;
-  }
-
-  &.marked-scene.checked:after {
-    font-family: "H5PFontAwesome4", sans-serif;
-    content: "\f00c";
-    font-size: 1.5rem;
-    align-self: center;
-    margin-right: 0.75rem;
-    color: #2c611a;
-  }
-
   .thumbnail-wrapper {
     display: flex;
     position: relative;
@@ -106,5 +63,48 @@
 
   .scene-selector-submenu {
     display: none;
+  }
+
+  &.marked-scene {
+    background-color: #ddf0dd;
+    border-color: #72c967;
+    border-bottom-width: 1px;
+  }
+
+  &.no-top-border {
+    border-top: none;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+    border-color: #e0dede;
+    cursor: pointer;
+
+    .scene-selector-submenu {
+      display: block;
+    }
+
+    .scene-wrapper .h5p-scene-name {
+      text-decoration: underline;
+    }
+  }
+
+  &:active {
+    background-color: #e8e8e8;
+    border-color: #e0dede;
+  }
+
+  &.marked-scene:hover {
+    background-color: #bacdba;
+    border-color: #5baa55;
+  }
+
+  &.marked-scene.checked:after {
+    font-family: "H5PFontAwesome4", sans-serif;
+    content: "\f00c";
+    font-size: 1.5rem;
+    align-self: center;
+    margin-right: 0.75rem;
+    color: #2c611a;
   }
 }
