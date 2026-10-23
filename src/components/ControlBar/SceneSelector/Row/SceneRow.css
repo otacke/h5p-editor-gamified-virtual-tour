@@ -1,31 +1,31 @@
 @import '@styles/icons.css';
 
 .h5p-scene-row {
-  padding: 0.625rem;
   border: 1px solid #e0dede;
   border-bottom-width: 0;
   display: flex;
+  padding: 0.625rem;
 
   .thumbnail-wrapper {
     display: flex;
+    height: 2.1rem;
     position: relative;
     width: 2.7rem;
-    height: 2.1rem;
 
     &:before {
-      font-family: "360-image", sans-serif;
-      content: var(--icon-static-scene);
-      position: absolute;
       background: white;
+      content: var(--icon-static-scene);
+      font-family: "360-image", sans-serif;
+      font-size: 0.9rem;
       left: 0.18rem;
+      position: absolute;
       top: 0.09rem;
       transform: translate(-50%,-50%);
-      font-size: 0.9rem;
     }
 
     .scene-thumbnail {
-      width: 100%;
       align-self: center;
+      width: 100%;
 
       &.vertical {
         height: 100%;
@@ -39,20 +39,20 @@
   }
 
   .scene-wrapper {
-    flex: 1;
-    display: inline-block;
-    margin: 0 0.75rem;
-    vertical-align: top;
     box-sizing: border-box;
+    display: inline-block;
+    flex: 1;
+    margin: 0 0.75rem;
     overflow: hidden;
+    vertical-align: top;
 
     .h5p-scene-name {
+      cursor: pointer;
       font-size: 0.9rem;
       font-weight: bold;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      cursor: pointer;
+      white-space: nowrap;
     }
 
     .starting-scene {
@@ -67,8 +67,8 @@
 
   &.marked-scene {
     background-color: #ddf0dd;
-    border-color: #72c967;
     border-bottom-width: 1px;
+    border-color: #72c967;
   }
 
   &.no-top-border {
@@ -100,11 +100,11 @@
   }
 
   &.marked-scene.checked:after {
-    font-family: "H5PFontAwesome4", sans-serif;
-    content: "\f00c";
-    font-size: 1.5rem;
     align-self: center;
-    margin-right: 0.75rem;
     color: #2c611a;
+    content: "\f00c";
+    font-family: "H5PFontAwesome4", sans-serif;
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
   }
 }

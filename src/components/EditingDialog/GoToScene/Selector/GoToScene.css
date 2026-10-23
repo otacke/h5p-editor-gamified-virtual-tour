@@ -2,9 +2,9 @@
   margin-top: 2rem;
 
   .error-message {
+    color: darkred;
     display: none;
     padding: 0.5rem 0;
-    color: darkred;
   }
 
   .go-to-scene-selector-wrapper .selector-separator {

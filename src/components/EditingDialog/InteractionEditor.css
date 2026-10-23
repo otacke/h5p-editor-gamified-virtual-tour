@@ -7,8 +7,8 @@
     }
 
     &.h5p-gotoscene:before {
-      font-family: "360-image", sans-serif;
       content: var(--icon-go-to-scene);
+      font-family: "360-image", sans-serif;
     }
 
     &.h5p-advancedtext:before {
@@ -30,8 +30,8 @@
     &.h5p-imageslider:before,
     &.h5p-singlechoiceset:before,
     &.h5p-summary:before {
-      font-family: "H5PFontIcons", sans-serif;
       content: var(--icon-summary);
+      font-family: "H5PFontIcons", sans-serif;
     }
 
     &.h5p-singlechoiceset:before {

@@ -1,21 +1,19 @@
 .h5p-editor-gamified-virtual-tour-wrapper {
-  /* H5PFontAwesome4 */
-  --icon-video: '\f008';
   --icon-audio: '\f028';
-  --icon-image: '\f03e';
-
+  --icon-delete: '\e910';
+  --icon-dropdown: '\e913';
+  --icon-edit: '\e90f';
   /* 360-image */
   --icon-go-to-scene: '\e907';
+  --icon-image: '\f03e';
+  --icon-image-slider: '\e921';
   --icon-scene: '\e915';
-  --icon-dropdown: '\e913';
   --icon-set-start-scene: '\e914';
-  --icon-edit: '\e90f';
-  --icon-delete: '\e910';
-  --icon-three-sixty-scene: '\e902';
+  --icon-single-choice-set: '\e993';
   --icon-static-scene: '\e90b';
-
   /* H5PFontIcons */
   --icon-summary: '\e992';
-  --icon-single-choice-set: '\e993';
-  --icon-image-slider: '\e921';
+  --icon-three-sixty-scene: '\e902';
+  /* H5PFontAwesome4 */
+  --icon-video: '\f008';
 }
