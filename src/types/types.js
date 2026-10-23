@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { SceneTypes } from '../components/Scene/Scene.js';
-import { InteractionEditingType } from '../components/EditingDialog/InteractionEditor.js';
+import { SceneTypes } from '@components/Scene/Scene.js';
+import { InteractionEditingType } from '@components/EditingDialog/InteractionEditor.js';
 
 /** @constant {object} sceneType PropTypes shape for scene type. */
 export const sceneType = PropTypes.shape({

@@ -1,4 +1,4 @@
-import { getLibraries } from '../context/H5PContext.js';
+import { getLibraries } from '@context/H5PContext.js';
 
 /**
  * Get scenes field from Gamified Virtual Tour semantics structure.

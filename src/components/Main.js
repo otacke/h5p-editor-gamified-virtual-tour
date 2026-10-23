@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Scene, { SceneTypes } from './Scene/Scene.js';
-import ControlBar from './ControlBar/ControlBar.js';
-import SceneEditor, { SceneEditingType } from './EditingDialog/SceneEditor.js';
-import InteractionsBar from './InteractionsBar/InteractionsBar.js';
-import './Main.css';
-import InteractionEditor, { InteractionEditingType } from './EditingDialog/InteractionEditor.js';
-import { H5PContext } from '../context/H5PContext.js';
-import { deleteScene, getSceneFromId, setScenePositionFromCamera, updateScene } from '../h5phelpers/sceneParams.js';
-import { isGoToScene, updatePosition } from '../h5phelpers/libraryParams.js';
-import { showConfirmationDialog } from '../h5phelpers/h5pComponents.js';
-import { addBehavioralListeners } from '../h5phelpers/editorForms.js';
+import Scene, { SceneTypes } from '@components/Scene/Scene.js';
+import ControlBar from '@components/ControlBar/ControlBar.js';
+import SceneEditor, { SceneEditingType } from '@components/EditingDialog/SceneEditor.js';
+import InteractionsBar from '@components/InteractionsBar/InteractionsBar.js';
+import '@components/Main.css';
+import InteractionEditor, { InteractionEditingType } from '@components/EditingDialog/InteractionEditor.js';
+import { H5PContext } from '@context/H5PContext.js';
+import { deleteScene, getSceneFromId, setScenePositionFromCamera, updateScene } from '@h5phelpers/sceneParams.js';
+import { isGoToScene, updatePosition } from '@h5phelpers/libraryParams.js';
+import { showConfirmationDialog } from '@h5phelpers/h5pComponents.js';
+import { addBehavioralListeners } from '@h5phelpers/editorForms.js';
 
 /**
  * Render gamified virtual tour editor.

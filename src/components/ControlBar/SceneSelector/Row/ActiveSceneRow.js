@@ -1,7 +1,7 @@
 import React from 'react';
-import { sceneType } from '../../../../types/types.js';
-import './ActiveSceneRow.css';
-import { SceneTypes } from '../../../Scene/Scene.js';
+import { sceneType } from '@types/types.js';
+import '@components/ControlBar/SceneSelector/Row/ActiveSceneRow.css';
+import { SceneTypes } from '@components/Scene/Scene.js';
 import PropTypes from 'prop-types';
 
 

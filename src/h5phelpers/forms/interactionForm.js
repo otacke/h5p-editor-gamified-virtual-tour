@@ -1,4 +1,4 @@
-import { getInteractionsField, isChildrenValid } from '../editorForms.js';
+import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.js';
 
 /**
  * Create interaction form and append it to wrapper.

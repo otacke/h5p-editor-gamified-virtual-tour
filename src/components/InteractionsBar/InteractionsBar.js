@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './InteractionsBar.css';
-import { getLibraries, H5PContext } from '../../context/H5PContext.js';
+import '@components/InteractionsBar/InteractionsBar.css';
+import { getLibraries, H5PContext } from '@context/H5PContext.js';
 
 /**
  * Render bar with buttons to create interactions.

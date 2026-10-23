@@ -1,5 +1,5 @@
 import React from 'react';
-import { getInteractionsField } from '../h5phelpers/editorForms.js';
+import { getInteractionsField } from '@h5phelpers/editorForms.js';
 
 /**
  * Get available libraries defined by action in semantics.

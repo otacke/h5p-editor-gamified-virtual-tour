@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ExpandedSceneSelector.css';
+import '@components/ControlBar/SceneSelector/ExpandedSceneSelector.css';
 
 /**
  * Render expanded scene selector.

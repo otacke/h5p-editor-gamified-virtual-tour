@@ -1,4 +1,4 @@
-import { getSceneFromId } from './sceneParams.js';
+import { getSceneFromId } from '@h5phelpers/sceneParams.js';
 
 /** @constant {object} Libraries Library machine names. */
 export const Libraries = {

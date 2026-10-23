@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { editingSceneType } from '../../types/types.js';
-import EditingDialog from './EditingDialog.js';
-import { H5PContext } from '../../context/H5PContext.js';
-import { SceneTypes } from '../Scene/Scene.js';
-import './SceneEditor.css';
-import { getSceneFromId } from '../../h5phelpers/sceneParams.js';
-import { showConfirmationDialog } from '../../h5phelpers/h5pComponents.js';
+import { editingSceneType } from '@types/types.js';
+import EditingDialog from '@components/EditingDialog/EditingDialog.js';
+import { H5PContext } from '@context/H5PContext.js';
+import { SceneTypes } from '@components/Scene/Scene.js';
+import '@components/EditingDialog/SceneEditor.css';
+import { getSceneFromId } from '@h5phelpers/sceneParams.js';
+import { showConfirmationDialog } from '@h5phelpers/h5pComponents.js';
 import {
   createSceneForm,
   getDefaultSceneParams,
   isInteractionsValid,
   sanitizeSceneForm,
   validateSceneForm,
-} from '../../h5phelpers/forms/sceneForm.js';
+} from '@h5phelpers/forms/sceneForm.js';
 
 /** @constant {object} SceneEditingType Scene editing state identifiers. */
 export const SceneEditingType = {

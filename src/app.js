@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Main from './components/Main.js';
-import { H5PContext } from './context/H5PContext.js';
+import Main from '@components/Main.js';
+import { H5PContext } from '@context/H5PContext.js';
 
 /**
  * H5P content editor for gamified virtual tour.

@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import EditingDialog from './EditingDialog.js';
-import { H5PContext } from '../../context/H5PContext.js';
-import './InteractionEditor.css';
-import { SceneTypes } from '../Scene/Scene.js';
-import { getDefaultLibraryParams, isGoToScene } from '../../h5phelpers/libraryParams.js';
-import { getSceneFromId } from '../../h5phelpers/sceneParams.js';
-import { getLibraryDataFromFields } from '../../h5phelpers/editorForms.js';
+import EditingDialog from '@components/EditingDialog/EditingDialog.js';
+import { H5PContext } from '@context/H5PContext.js';
+import '@components/EditingDialog/InteractionEditor.css';
+import { SceneTypes } from '@components/Scene/Scene.js';
+import { getDefaultLibraryParams, isGoToScene } from '@h5phelpers/libraryParams.js';
+import { getSceneFromId } from '@h5phelpers/sceneParams.js';
+import { getLibraryDataFromFields } from '@h5phelpers/editorForms.js';
 import {
   createInteractionForm,
   sanitizeInteractionParams,
   validateInteractionForm,
-} from '../../h5phelpers/forms/interactionForm.js';
-import GoToSceneWrapper from './GoToScene/GoToSceneWrapper.js';
-import { sanitizeSceneForm, validateSceneForm } from '../../h5phelpers/forms/sceneForm.js';
+} from '@h5phelpers/forms/interactionForm.js';
+import GoToSceneWrapper from '@components/EditingDialog/GoToScene/GoToSceneWrapper.js';
+import { sanitizeSceneForm, validateSceneForm } from '@h5phelpers/forms/sceneForm.js';
 
 /** @constant {object} InteractionEditingType Interaction editing state identifiers. */
 export const InteractionEditingType = {

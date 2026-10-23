@@ -1,4 +1,4 @@
-@import '../../styles/icons.css';
+@import '@styles/icons.css';
 
 .h5p-editing-dialog-header {
   .title.scene:before {

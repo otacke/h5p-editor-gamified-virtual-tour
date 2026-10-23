@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SceneTypes } from '../../../Scene/Scene.js';
-import './SceneRow.css';
-import { getImageSource } from '../../../../context/H5PContext.js';
-import { H5PContext } from '../../../../context/H5PContext.js';
+import { SceneTypes } from '@components/Scene/Scene.js';
+import '@components/ControlBar/SceneSelector/Row/SceneRow.css';
+import { getImageSource } from '@context/H5PContext.js';
+import { H5PContext } from '@context/H5PContext.js';
 
 /** @constant {number} AspectRatioWidth Width of thumbnail aspect ratio. */
 const AspectRatioWidth = 4;

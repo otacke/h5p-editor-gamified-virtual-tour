@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import SceneRow from './Row/SceneRow.js';
+import SceneRow from '@components/ControlBar/SceneSelector/Row/SceneRow.js';
 
 /**
  * Render scene list for scene selector.

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import GoToScene from './Selector/GoToScene.js';
-import { createSceneForm, getDefaultSceneParams } from '../../../h5phelpers/forms/sceneForm.js';
-import { H5PContext } from '../../../context/H5PContext.js';
+import GoToScene from '@components/EditingDialog/GoToScene/Selector/GoToScene.js';
+import { createSceneForm, getDefaultSceneParams } from '@h5phelpers/forms/sceneForm.js';
+import { H5PContext } from '@context/H5PContext.js';
 
 /**
  * Render wrapper for go-to-scene interaction.

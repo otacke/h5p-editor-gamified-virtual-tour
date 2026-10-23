@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NoScene from './NoScene.js';
-import './Scene.css';
-import { H5PContext } from '../../context/H5PContext.js';
-import { initializeThreeSixtyPreview } from '../../h5phelpers/h5pComponents.js';
+import NoScene from '@components/Scene/NoScene.js';
+import '@components/Scene/Scene.css';
+import { H5PContext } from '@context/H5PContext.js';
+import { initializeThreeSixtyPreview } from '@h5phelpers/h5pComponents.js';
 
 /** @constant {object} SceneTypes Scene type identifiers. */
 export const SceneTypes = {

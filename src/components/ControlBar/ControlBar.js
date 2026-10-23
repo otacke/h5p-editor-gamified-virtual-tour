@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SceneEditingType } from '../EditingDialog/SceneEditor.js';
-import './ControlBar.css';
-import { H5PContext } from '../../context/H5PContext.js';
-import { SceneTypes } from '../Scene/Scene.js';
-import { getSceneFromId } from '../../h5phelpers/sceneParams.js';
-import SceneList from './SceneSelector/SceneList.js';
-import SceneSelectorSubmenu from './SceneSelector/Row/Submenu/SceneSelectorSubmenu.js';
-import SceneSelector from './SceneSelector/SceneSelector.js';
+import { SceneEditingType } from '@components/EditingDialog/SceneEditor.js';
+import '@components/ControlBar/ControlBar.css';
+import { H5PContext } from '@context/H5PContext.js';
+import { SceneTypes } from '@components/Scene/Scene.js';
+import { getSceneFromId } from '@h5phelpers/sceneParams.js';
+import SceneList from '@components/ControlBar/SceneSelector/SceneList.js';
+import SceneSelectorSubmenu from '@components/ControlBar/SceneSelector/Row/Submenu/SceneSelectorSubmenu.js';
+import SceneSelector from '@components/ControlBar/SceneSelector/SceneSelector.js';
 
 /**
  * Render control bar with scene selector and buttons.

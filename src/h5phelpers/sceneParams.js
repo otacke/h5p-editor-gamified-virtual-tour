@@ -1,5 +1,5 @@
-import { SceneEditingType } from '../components/EditingDialog/SceneEditor.js';
-import { isGoToScene } from './libraryParams.js';
+import { SceneEditingType } from '@components/EditingDialog/SceneEditor.js';
+import { isGoToScene } from '@h5phelpers/libraryParams.js';
 
 /**
  * Get scene from ID.

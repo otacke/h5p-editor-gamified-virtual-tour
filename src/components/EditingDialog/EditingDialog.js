@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './EditingDialog.css';
+import '@components/EditingDialog/EditingDialog.css';
 
 /**
  * Render editing dialog with title, remove and done buttons.

@@ -1,4 +1,4 @@
-import { getSceneField, isChildrenValid } from '../editorForms.js';
+import { getSceneField, isChildrenValid } from '@h5phelpers/editorForms.js';
 
 /** @constant {number} DEFAULT_INTERACTION_POSITION_X Default interaction position on X axis. */
 const DEFAULT_INTERACTION_POSITION_X = 50;

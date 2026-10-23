@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SceneList from '../../../ControlBar/SceneSelector/SceneList.js';
-import './GoToSceneSelector.css';
+import SceneList from '@components/ControlBar/SceneSelector/SceneList.js';
+import '@components/EditingDialog/GoToScene/Selector/GoToSceneSelector.css';
 
 /**
  * Render go-to-scene selector.

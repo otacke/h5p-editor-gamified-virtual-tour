@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { H5PContext } from '../../../../context/H5PContext.js';
-import './GoToScene.css';
-import GoToSceneSelector from './GoToSceneSelector.js';
+import { H5PContext } from '@context/H5PContext.js';
+import '@components/EditingDialog/GoToScene/Selector/GoToScene.css';
+import GoToSceneSelector from '@components/EditingDialog/GoToScene/Selector/GoToSceneSelector.js';
 
 /**
  * Render go-to-scene selector with new scene button.

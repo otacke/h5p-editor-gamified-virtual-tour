@@ -1,6 +1,6 @@
 import React from 'react';
-import './NoScene.css';
-import { H5PContext } from '../../context/H5PContext.js';
+import '@components/Scene/NoScene.css';
+import { H5PContext } from '@context/H5PContext.js';
 
 /**
  * Render no-scene placeholder.

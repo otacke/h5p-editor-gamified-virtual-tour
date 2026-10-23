@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SceneSelectorSubmenu.css';
+import '@components/ControlBar/SceneSelector/Row/Submenu/SceneSelectorSubmenu.css';
 
 /**
  * Render scene selector submenu.
