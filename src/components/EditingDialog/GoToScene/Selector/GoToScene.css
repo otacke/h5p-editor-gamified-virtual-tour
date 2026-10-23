@@ -1,23 +1,23 @@
 .go-to-scene {
   margin-top: 2rem;
-}
 
-.go-to-scene .error-message {
-  display: none;
-  padding: 0.5rem 0;
-  color: darkred;
-}
+  .error-message {
+    display: none;
+    padding: 0.5rem 0;
+    color: darkred;
+  }
 
-.go-to-scene .selector-separator {
-  font-weight: bold;
-  padding: 1.25rem 0;
-}
+  .go-to-scene-selector-wrapper .selector-separator {
+    font-weight: bold;
+    padding: 1.25rem 0;
+  }
 
-.go-to-scene .new-scene-title {
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
+  .create-new-scene-wrapper .new-scene-title {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
 
-.go-to-scene.has-error .error-message {
-  display: block;
+  &.has-error .error-message {
+    display: block;
+  }
 }

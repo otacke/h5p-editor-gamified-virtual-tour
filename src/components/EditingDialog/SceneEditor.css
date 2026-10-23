@@ -1,6 +1,8 @@
 @import '../../styles/icons.css';
 
-.h5p-editing-dialog-header .title.scene:before {
-  font-family: "360-image", sans-serif;
-  content: var(--icon-scene);
+.h5p-editing-dialog-header {
+  .title.scene:before {
+    font-family: "360-image", sans-serif;
+    content: var(--icon-scene);
+  }
 }

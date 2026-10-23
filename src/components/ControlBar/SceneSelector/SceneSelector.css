@@ -4,62 +4,62 @@
   position: relative;
   margin-right: 0.5rem;
   width: 30rem;
-}
 
-.h5p-scene-selector {
-  display: inline-flex;
-  font-size: 1rem;
-  width: 30rem;
+  .h5p-scene-selector {
+    display: inline-flex;
+    font-size: 1rem;
+    width: 30rem;
 
-  border: 1px solid #d1d1d1;
-  cursor: pointer;
-}
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
 
-.h5p-select-content {
-  flex: 1;
-  display: flex;
-  align-self: center;
-  overflow: hidden;
-}
+    &:hover {
+      background: #f0f2ff;
+      border-color: #d3d7f0;
+    }
 
-.h5p-select-handle {
-  background: #e6e6e8;
-  padding: 0.5rem 0.75rem;
-}
+    &:active {
+      background: #dcdef5;
+      border-color: #c8cae8;
+    }
 
-.h5p-scene-selector:hover {
-  background: #f0f2ff;
-  border-color: #d3d7f0;
-}
+    .h5p-select-content {
+      flex: 1;
+      display: flex;
+      align-self: center;
+      overflow: hidden;
+    }
 
-.h5p-scene-selector:active {
-  background: #dcdef5;
-  border-color: #c8cae8;
-}
+    .h5p-select-handle {
+      background: #e6e6e8;
+      padding: 0.5rem 0.75rem;
 
-.h5p-scene-selector.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
+      &:before {
+        font-family: "360-image", sans-serif;
+        content: var(--icon-dropdown);
+      }
+    }
 
-.h5p-select-handle:before {
-  font-family: "360-image", sans-serif;
-  content: var(--icon-dropdown);
-}
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
 
-.h5p-scene-selector.disabled:hover {
-  background: white;
-  border-color: #d1d1d1;
-}
+      &:hover {
+        background: white;
+        border-color: #d1d1d1;
+      }
 
-.h5p-scene-selector.disabled:active {
-  background: white;
-  border-color: #d1d1d1;
-}
+      &:active {
+        background: white;
+        border-color: #d1d1d1;
+      }
 
-.h5p-scene-selector.disabled .h5p-select-content {
-  padding: 0.6rem;
+      .h5p-select-content {
+        padding: 0.6rem;
+      }
+    }
+  }
 }

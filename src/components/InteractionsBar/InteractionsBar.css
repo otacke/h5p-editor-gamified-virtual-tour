@@ -5,101 +5,101 @@
   background: #f5f5f5;
   border-top: 1px solid #d1d1d1;
   border-bottom: 1px solid #d1d1d1;
-}
 
-.h5p-interactions-bar button {
-  box-sizing: content-box;
-  vertical-align: top;
-  position: relative;
-  font-size: 1.2rem;
+  & button {
+    box-sizing: content-box;
+    vertical-align: top;
+    position: relative;
+    font-size: 1.2rem;
 
-  width: 1.2rem;
-  height: 1.32rem;
-  margin-right: 0.48rem;
-  padding: 0.3rem 0.78rem;
+    width: 1.2rem;
+    height: 1.32rem;
+    margin-right: 0.48rem;
+    padding: 0.3rem 0.78rem;
 
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 0.3rem;
-  color: #333;
-  background: #f2f2f2;
-  background: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
-  background: -moz-linear-gradient(top, #fff 0, #f2f2f2 100%);
-  background: -o-linear-gradient(top, #fff 0, #f2f2f2 100%);
-}
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    color: #333;
+    background: #f2f2f2;
+    background: -webkit-linear-gradient(top, #fff 0, #f2f2f2 100%);
+    background: -moz-linear-gradient(top, #fff 0, #f2f2f2 100%);
+    background: -o-linear-gradient(top, #fff 0, #f2f2f2 100%);
 
-.h5p-interactions-bar button:hover {
-  border-color: #999999;
-  transition: 0.1s;
-  background: #f2f2f2;
-}
+    &:hover {
+      border-color: #999999;
+      transition: 0.1s;
+      background: #f2f2f2;
 
-.h5p-interactions-bar button:active {
-  border-color: #999999;
-  transition: 0.1s;
-  background: #dddddd;
-}
+      .tooltip {
+        display: block;
+      }
+    }
 
-.h5p-interactions-bar button .tooltip {
-  display: none;
-  background: black;
-  color: white;
-  white-space: nowrap;
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  transform: translateY(100%);
-  z-index: 1;
-  padding: 0.192rem 0.48rem;
-  font-size: 0.96rem;
-  border-radius: 4px;
-}
+    &:active {
+      border-color: #999999;
+      transition: 0.1s;
+      background: #dddddd;
+    }
 
-.h5p-interactions-bar button:before {
-  font-family: "H5PFontAwesome4", sans-serif;
-}
+    .tooltip {
+      display: none;
+      background: black;
+      color: white;
+      white-space: nowrap;
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      transform: translateY(100%);
+      z-index: 1;
+      padding: 0.192rem 0.48rem;
+      font-size: 0.96rem;
+      border-radius: 4px;
+    }
 
-.h5p-interactions-bar .h5p-gotoscene:before {
-  font-family: "360-image", sans-serif;
-  font-size: 0.96rem;
-  content: var(--icon-go-to-scene);
-}
+    &:before {
+      font-family: "H5PFontAwesome4", sans-serif;
+    }
 
-.h5p-interactions-bar .h5p-advancedtext:before {
-  content: 'T';
-}
+    &.h5p-gotoscene:before {
+      font-family: "360-image", sans-serif;
+      font-size: 0.96rem;
+      content: var(--icon-go-to-scene);
+    }
 
-.h5p-interactions-bar .h5p-image:before {
-  content: var(--icon-image);
-}
+    &.h5p-advancedtext:before {
+      content: 'T';
+    }
 
-.h5p-interactions-bar .h5p-audio:before {
-  content: var(--icon-audio);
-}
+    &.h5p-image:before {
+      content: var(--icon-image);
+    }
 
-.h5p-interactions-bar .h5p-video:before {
-  content: var(--icon-video);
-}
+    &.h5p-audio:before {
+      content: var(--icon-audio);
+    }
 
-.h5p-interactions-bar .h5p-imageslider:before,
-.h5p-interactions-bar .h5p-singlechoiceset:before,
-.h5p-interactions-bar .h5p-summary:before {
-  font-family: "H5PFontIcons", sans-serif;
-  content: var(--icon-summary);
-  font-size: 1.74rem;
-  position: absolute;
-  top: 0.8004rem;
-  transform: translate(-50%, -50%);
-}
+    &.h5p-video:before {
+      content: var(--icon-video);
+    }
 
-.h5p-interactions-bar .h5p-singlechoiceset:before {
-  content: var(--icon-single-choice-set);
-}
+    &.h5p-imageslider:before,
+    &.h5p-singlechoiceset:before,
+    &.h5p-summary:before {
+      font-family: "H5PFontIcons", sans-serif;
+      content: var(--icon-summary);
+      font-size: 1.74rem;
+      position: absolute;
+      top: 0.8004rem;
+      transform: translate(-50%, -50%);
+    }
 
-.h5p-interactions-bar .h5p-imageslider:before {
-  content: var(--icon-image-slider);
-}
+    &.h5p-singlechoiceset:before {
+      content: var(--icon-single-choice-set);
+    }
 
-.h5p-interactions-bar button:hover .tooltip {
-  display: block;
+    &.h5p-imageslider:before {
+      content: var(--icon-image-slider);
+    }
+  }
 }

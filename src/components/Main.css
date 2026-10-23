@@ -9,10 +9,12 @@
   font-style: normal;
 }
 
-.h5p-gamifiedvirtualtour-editor .scene-editor {
-  position: relative;
-}
+.h5p-gamifiedvirtualtour-editor {
+  .scene-editor {
+    position: relative;
 
-.h5p-gamifiedvirtualtour-editor .scene-wrapper.no-scenes .scene-container {
-  display: none;
+    .scene-wrapper.no-scenes .scene-container {
+      display: none;
+    }
+  }
 }
