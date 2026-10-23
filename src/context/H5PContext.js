@@ -7,18 +7,12 @@ import { getInteractionsField } from '@h5phelpers/editorForms.js';
  * @returns {Promise} Resolves with libraries.
  */
 export const getLibraries = async (field) => {
-  const actionField = H5PEditor.findSemanticsField(
-    'action',
-    getInteractionsField(field),
-  );
+  const actionField = H5PEditor.findSemanticsField('action', getInteractionsField(field));
 
   return new Promise((resolve) => {
-    H5PEditor.LibraryListCache.getLibraries(
-      actionField.options,
-      (libraries) => {
-        resolve(libraries);
-      },
-    );
+    H5PEditor.LibraryListCache.getLibraries(actionField.options, (libraries) => {
+      resolve(libraries);
+    });
   });
 };
 

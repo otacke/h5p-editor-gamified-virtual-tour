@@ -33,8 +33,7 @@ export const initializeThreeSixtyPreview = (container, params, l10n) => {
  * @param {function} cancel Callback to run when dialog is canceled.
  */
 export const showConfirmationDialog = (dialogOptions, confirm, cancel) => {
-  const deleteDialog = new H5P.ConfirmationDialog(dialogOptions)
-    .appendTo(document.body);
+  const deleteDialog = new H5P.ConfirmationDialog(dialogOptions).appendTo(document.body);
 
   deleteDialog.on('confirmed', () => {
     if (confirm) {

@@ -28,12 +28,10 @@ const SceneList = (props) => {
               isShowingCheck={props.isShowingCheck}
               isAfterActiveScene={isAfterActiveScene}
               onTitleClick={() => {
-                props.onTitleClick
-                && props.onTitleClick(scene.sceneId);
+                props.onTitleClick && props.onTitleClick(scene.sceneId);
               }}
               onSceneClick={() => {
-                props.onSceneClick
-                && props.onSceneClick(scene.sceneId);
+                props.onSceneClick && props.onSceneClick(scene.sceneId);
               }}
             >
               {

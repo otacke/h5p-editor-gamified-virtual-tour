@@ -26,22 +26,13 @@ const DefaultInteractionValues = {
  */
 export const createSceneForm = (field, params, wrapper, parent) => {
   const sceneField = getSceneField(field);
-  const hiddenSceneFields = [
-    'sceneId',
-    'cameraStartPosition',
-    'interactions',
-  ];
+  const hiddenSceneFields = ['sceneId', 'cameraStartPosition', 'interactions'];
 
   const sceneFields = sceneField.field.fields.filter((sceneField) => {
     return !hiddenSceneFields.includes(sceneField.name);
   });
 
-  H5PEditor.processSemanticsChunk(
-    sceneFields,
-    params,
-    wrapper,
-    parent,
-  );
+  H5PEditor.processSemanticsChunk(sceneFields, params, wrapper, parent);
 };
 
 /**

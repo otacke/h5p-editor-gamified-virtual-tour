@@ -59,12 +59,7 @@ export default class SceneEditor extends React.Component {
     // Preserve parent's children
     this.parentChildren = this.context.parent.children;
 
-    createSceneForm(
-      this.context.field,
-      this.params,
-      this.semanticsRef.current,
-      this.context.parent,
-    );
+    createSceneForm(this.context.field, this.params, this.semanticsRef.current, this.context.parent);
 
     // Capture own children and restore parent
     this.children = this.context.parent.children;
@@ -80,8 +75,7 @@ export default class SceneEditor extends React.Component {
       return;
     }
 
-    const isThreeSixtyScene = this.params.sceneType
-      === SceneTypes.THREE_SIXTY_SCENE;
+    const isThreeSixtyScene = this.params.sceneType === SceneTypes.THREE_SIXTY_SCENE;
 
     if (isInteractionsValid(this.params, isThreeSixtyScene)) {
       this.confirmDone();
@@ -101,14 +95,9 @@ export default class SceneEditor extends React.Component {
    * Sanitize scene form and trigger done action.
    */
   confirmDone = () => {
-    const isThreeSixtyScene = this.params.sceneType
-      === SceneTypes.THREE_SIXTY_SCENE;
+    const isThreeSixtyScene = this.params.sceneType === SceneTypes.THREE_SIXTY_SCENE;
 
-    sanitizeSceneForm(
-      this.params,
-      isThreeSixtyScene,
-      this.params.cameraStartPosition,
-    );
+    sanitizeSceneForm(this.params, isThreeSixtyScene, this.params.cameraStartPosition);
 
     this.props.doneAction(this.params);
   };

@@ -227,11 +227,7 @@ export default class Main extends React.Component {
   editInteraction = (params, sceneParams = null) => {
     // Creating scene as well
     if (sceneParams) {
-      this.doneEditingScene(
-        sceneParams,
-        SceneEditingType.NEW_SCENE,
-        true,
-      );
+      this.doneEditingScene(sceneParams, SceneEditingType.NEW_SCENE, true);
     }
 
     const scenes = this.context.params.scenes;
@@ -240,8 +236,7 @@ export default class Main extends React.Component {
       scene.interactions = [];
     }
 
-    const isEditing = this.state.editingInteraction
-      !== InteractionEditingType.NEW_INTERACTION;
+    const isEditing = this.state.editingInteraction !== InteractionEditingType.NEW_INTERACTION;
 
     let interactionIndex = null;
     if (isEditing) {
@@ -309,11 +304,7 @@ export default class Main extends React.Component {
    */
   handleSetStartingPosition = () => {
     const camera = this.scenePreview.getCamera().camera;
-    setScenePositionFromCamera(
-      this.context.params.scenes,
-      this.state.currentScene,
-      camera,
-    );
+    setScenePositionFromCamera(this.context.params.scenes, this.state.currentScene, camera);
     this.setState({
       currentCameraPosition: { yaw: `${camera.yaw}`, pitch: `${camera.pitch}` },
     });
@@ -386,12 +377,7 @@ export default class Main extends React.Component {
         const index = this.scenePreview.threeSixty.indexOf(e.data.target);
 
         // This is an element
-        updatePosition(
-          this.context.params.scenes,
-          this.state.currentScene,
-          index,
-          e.data,
-        );
+        updatePosition(this.context.params.scenes, this.state.currentScene, index, e.data);
       }
       else {
         // This is the camera
@@ -419,9 +405,7 @@ export default class Main extends React.Component {
     }
 
     this.setState((prevState) => {
-      const isExpanded = forceState !== undefined
-        ? forceState
-        : !prevState.isSceneSelectorExpanded;
+      const isExpanded = forceState !== undefined ? forceState : !prevState.isSceneSelectorExpanded;
       return {
         isSceneSelectorExpanded: isExpanded,
       };

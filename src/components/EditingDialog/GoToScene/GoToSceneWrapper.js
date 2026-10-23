@@ -34,12 +34,7 @@ export default class GoToSceneWrapper extends Component {
     // Preserve parent's children
     this.parentChildren = this.context.parent.children;
 
-    createSceneForm(
-      this.context.field,
-      params,
-      this.newScene.current,
-      this.context.parent,
-    );
+    createSceneForm(this.context.field, params, this.newScene.current, this.context.parent);
 
     // Capture own children and restore parent
     this.sceneChildren = this.context.parent.children;

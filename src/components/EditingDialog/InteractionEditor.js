@@ -88,12 +88,7 @@ export default class InteractionEditor extends React.Component {
     // Preserve parent's children
     this.parentChildren = this.context.parent.children;
 
-    createInteractionForm(
-      field,
-      this.params,
-      this.semanticsRef.current,
-      this.context.parent,
-    );
+    createInteractionForm(field, this.params, this.semanticsRef.current, this.context.parent);
 
     // Restore parent's children after preserving our own
     this.children = this.context.parent.children;
@@ -135,12 +130,9 @@ export default class InteractionEditor extends React.Component {
       interactionPosition = this.getDefaultInteractionPosition();
     }
 
-    if (this.scene) {
-      // Return if scene is invalid
-      const isValidScene = this.validateScene();
-      if (!isValidScene) {
-        return;
-      }
+    // Return if scene is invalid
+    if (this.scene && !this.validateScene()) {
+      return;
     }
 
     this.params = sanitizeInteractionParams(this.params, interactionPosition);
@@ -167,14 +159,9 @@ export default class InteractionEditor extends React.Component {
       return false;
     }
 
-    const isThreeSixtyScene = this.scene.params.sceneType
-      === SceneTypes.THREE_SIXTY_SCENE;
+    const isThreeSixtyScene = this.scene.params.sceneType === SceneTypes.THREE_SIXTY_SCENE;
 
-    sanitizeSceneForm(
-      this.scene.params,
-      isThreeSixtyScene,
-      this.scene.params.cameraStartPosition,
-    );
+    sanitizeSceneForm(this.scene.params, isThreeSixtyScene, this.scene.params.cameraStartPosition);
     return true;
   };
 
@@ -205,9 +192,7 @@ export default class InteractionEditor extends React.Component {
 
     if (this.state.library) {
       title = this.state.library.title;
-      className = this.state.library.name
-        .toLowerCase()
-        .replace('.', '-');
+      className = this.state.library.name.toLowerCase().replace('.', '-');
     }
 
     const semanticsClasses = ['semantics-wrapper'];

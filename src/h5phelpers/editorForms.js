@@ -6,10 +6,7 @@ import { getLibraries } from '@context/H5PContext.js';
  * @returns {object} Scenes semantics field.
  */
 export const getSceneField = (field) => {
-  return H5PEditor.findSemanticsField(
-    'scenes',
-    field,
-  );
+  return H5PEditor.findSemanticsField('scenes', field);
 };
 
 /**
@@ -20,10 +17,7 @@ export const getSceneField = (field) => {
 export const getInteractionsField = (field) => {
   const sceneFields = getSceneField(field);
 
-  return H5PEditor.findSemanticsField(
-    'interactions',
-    sceneFields,
-  );
+  return H5PEditor.findSemanticsField('interactions', sceneFields);
 };
 
 /**
@@ -54,8 +48,7 @@ export const isChildrenValid = (children) => {
     // Special validation for scene image, since having a required image
     // is not supported by core yet
     const isRequiredImage = child.field.type === 'image'
-      && (child.field.optional === undefined
-        || child.field.optional === false);
+      && (child.field.optional === undefined || child.field.optional === false);
     if (isRequiredImage) {
       if (!child.params || !child.params.path) {
         isInputsValid = false;

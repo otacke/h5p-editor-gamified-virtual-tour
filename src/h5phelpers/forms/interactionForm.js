@@ -8,21 +8,14 @@ import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.j
  * @param {object} parent Parent widget.
  */
 export const createInteractionForm = (field, params, wrapper, parent) => {
-  const hiddenFormFields = [
-    'interactionPosition',
-  ];
+  const hiddenFormFields = ['interactionPosition'];
 
   const interactionsField = getInteractionsField(field);
   const interactionFields = interactionsField.field.fields.filter((field) => {
     return !hiddenFormFields.includes(field.name);
   });
 
-  H5PEditor.processSemanticsChunk(
-    interactionFields,
-    params,
-    wrapper,
-    parent,
-  );
+  H5PEditor.processSemanticsChunk(interactionFields, params, wrapper, parent);
 
   const libraryWrapper = wrapper.querySelector('.field.library');
 
