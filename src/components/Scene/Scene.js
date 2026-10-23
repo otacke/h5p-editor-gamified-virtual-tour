@@ -19,10 +19,18 @@ export default class Scene extends React.Component {
     this.state = {
       isInitialized: false,
     };
+
+    this.handleResize = () => {
+      this.preview.trigger('resize');
+    };
   }
 
   componentDidMount() {
     this.initializePreview();
+  }
+
+  componentWillUnmount() {
+    H5P.$window.off('resize', this.handleResize);
   }
 
   componentDidUpdate() {
@@ -65,9 +73,7 @@ export default class Scene extends React.Component {
 
     this.preview.updateParams(this.context.params);
 
-    H5P.$window.on('resize', () => {
-      this.preview.trigger('resize');
-    });
+    H5P.$window.on('resize', this.handleResize);
 
 
     this.setAsActiveScene();
