@@ -61,6 +61,7 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = (functio
         return;
       }
 
+      // TODO: This can be implemented with a container query in css, then the whole resize function should be obsolete
       const mobileThreshold = 815;
       const wrapperSize = this.wrapper.getBoundingClientRect();
       if (wrapperSize.width < mobileThreshold) {
