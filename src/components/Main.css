@@ -9,6 +9,10 @@
   font-style: normal;
 }
 
+.h5p-editor-gamified-virtual-tour-wrapper {
+  container: gamified-virtual-tour-editor / inline-size;
+}
+
 .h5p-gamifiedvirtualtour-editor {
   .scene-editor {
     position: relative;

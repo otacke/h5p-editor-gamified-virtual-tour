@@ -101,10 +101,8 @@
       }
     }
   }
-}
 
-.h5p-editor-gamified-virtual-tour-wrapper.mobile {
-  .h5p-control-bar {
+  @container gamified-virtual-tour-editor (width < 815px) {
     display: block;
 
     .buttons-wrapper {
