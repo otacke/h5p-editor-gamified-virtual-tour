@@ -2,10 +2,10 @@ import { SceneEditingType } from '../components/EditingDialog/SceneEditor.js';
 import { isGoToScene } from './libraryParams.js';
 
 /**
- * Get scene from id
- * @param {Array} scenes The scenes in the content.
- * @param {number} sceneId The ID of the scene to find.
- * @returns {object|undefined} The scene with the given ID, or undefined when not found.
+ * Get scene from ID.
+ * @param {Array} scenes Scenes in content.
+ * @param {number} sceneId ID of scene to find.
+ * @returns {object|undefined} Scene with given ID, or undefined when not found.
  */
 export const getSceneFromId = (scenes, sceneId) => {
   return scenes.find((scene) => {
@@ -14,11 +14,10 @@ export const getSceneFromId = (scenes, sceneId) => {
 };
 
 /**
- * Delete a scene in parameters and deletes any GoToScene interactions
- * within other scenes that was pointing to the deleted scene
- * @param {Array} scenes The scenes in the content.
- * @param {number} sceneId The ID of the scene to delete.
- * @returns {Array} The scenes with the deleted scene and its GoToScene interactions removed.
+ * Delete scene in parameters and delete any GoToScene interactions within other scenes pointing to deleted scene.
+ * @param {Array} scenes Scenes in content.
+ * @param {number} sceneId ID of scene to delete.
+ * @returns {Array} Scenes with deleted scene and its GoToScene interactions removed.
  */
 export const deleteScene = (scenes, sceneId) => {
   // Filter out the scene
@@ -26,7 +25,7 @@ export const deleteScene = (scenes, sceneId) => {
     return scene.sceneId !== sceneId;
   });
 
-  // Filter out any interactions pointing to the scene
+  // Filter out any interactions pointing to scene.
   return sceneRemoved.map((scene) => {
     const interactions = scene.interactions;
     if (interactions) {
@@ -45,11 +44,11 @@ export const deleteScene = (scenes, sceneId) => {
 };
 
 /**
- * Updates a scene within parameters
- * @param {Array} scenes The scenes in the content.
- * @param {object} params The new scene parameters.
- * @param {number} editingScene The ID of the scene to update, or SceneEditingType.NEW_SCENE when adding a new scene.
- * @returns {Array} The updated scenes.
+ * Update scene within parameters.
+ * @param {Array} scenes Scenes in content.
+ * @param {object} params New scene parameters.
+ * @param {number} editingScene ID of scene to update, or SceneEditingType.NEW_SCENE when adding new scene.
+ * @returns {Array} Updated scenes.
  */
 export const updateScene = (scenes, params, editingScene = -1) => {
   if (editingScene === SceneEditingType.NEW_SCENE) {
@@ -67,10 +66,10 @@ export const updateScene = (scenes, params, editingScene = -1) => {
 };
 
 /**
- * Set scene position in parameters
- * @param {Array} scenes The scenes in the content.
- * @param {number} sceneId The ID of the scene to update.
- * @param {object} camera The camera position with yaw and pitch values.
+ * Set scene position in parameters.
+ * @param {Array} scenes Scenes in content.
+ * @param {number} sceneId ID of scene to update.
+ * @param {object} camera Camera position with yaw and pitch values.
  */
 export const setScenePositionFromCamera = (scenes, sceneId, camera) => {
   const scene = getSceneFromId(scenes, sceneId);

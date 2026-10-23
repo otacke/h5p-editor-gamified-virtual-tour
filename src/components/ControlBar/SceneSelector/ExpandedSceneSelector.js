@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ExpandedSceneSelector.css';
 
+/**
+ * Render expanded scene selector.
+ * @param {object} props Component props.
+ * @returns {React.Element} Rendered expanded scene selector element.
+ */
 const ExpandedSceneSelector = (props) => (
   <div className='expanded-scene-selector'>
     <div className='header'>

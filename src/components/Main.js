@@ -12,7 +12,14 @@ import { isGoToScene, updatePosition } from '../h5phelpers/libraryParams.js';
 import { showConfirmationDialog } from '../h5phelpers/h5pComponents.js';
 import { addBehavioralListeners } from '../h5phelpers/editorForms.js';
 
+/**
+ * Render gamified virtual tour editor.
+ */
 export default class Main extends React.Component {
+  /**
+   * Create main component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
 
@@ -30,6 +37,9 @@ export default class Main extends React.Component {
     };
   }
 
+  /**
+   * React - run after initial render.
+   */
   componentDidMount() {
     addBehavioralListeners(this.context.parent, () => {
       this.setState({
@@ -38,6 +48,10 @@ export default class Main extends React.Component {
     });
   }
 
+  /**
+   * Start editing scene.
+   * @param {number} [sceneId] ID of scene to edit, new scene when omitted.
+   */
   editScene = (sceneId = SceneEditingType.NEW_SCENE) => {
     this.toggleExpandSceneSelector(false);
     this.setState({
@@ -45,6 +59,10 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Change current scene when current scene is deleted.
+   * @param {number} deletedSceneId ID of deleted scene.
+   */
   updateCurrentScene = (deletedSceneId) => {
     const hasDeletedCurrentScene = deletedSceneId === this.state.currentScene;
     if (!hasDeletedCurrentScene) {
@@ -63,6 +81,10 @@ export default class Main extends React.Component {
     this.changeScene(SceneTypes.NO_SCENE);
   };
 
+  /**
+   * Change start scene when start scene is deleted.
+   * @param {number} deletedSceneId ID of deleted scene.
+   */
   updateStartScene = (deletedSceneId) => {
     const hasDeletedStartScene = deletedSceneId === this.state.startScene;
     if (!hasDeletedStartScene) {
@@ -80,6 +102,10 @@ export default class Main extends React.Component {
     this.setStartScene(startScene);
   };
 
+  /**
+   * Show delete confirmation for scene.
+   * @param {number} sceneId ID of scene to delete.
+   */
   deleteScene = (sceneId) => {
     const isNewScene = sceneId === SceneEditingType.NEW_SCENE;
     const deleteSceneText = isNewScene
@@ -95,6 +121,10 @@ export default class Main extends React.Component {
     }, () => this.confirmedDeleteScene(sceneId));
   };
 
+  /**
+   * Delete scene after confirmation.
+   * @param {number} sceneId ID of scene to delete.
+   */
   confirmedDeleteScene = (sceneId) => {
     this.setState({
       editingScene: SceneEditingType.NOT_EDITING,
@@ -118,6 +148,12 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Save edited or new scene.
+   * @param {object} params Parameters of scene.
+   * @param {number} [editingScene] ID of scene being edited, current state when omitted.
+   * @param {boolean} [skipChangingScene] Whether to skip changing current scene.
+   */
   doneEditingScene = (params, editingScene = null, skipChangingScene = false) => {
     const scenes = this.context.params.scenes;
     editingScene = editingScene || this.state.editingScene;
@@ -142,6 +178,10 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Show delete confirmation for interaction.
+   * @param {number} [interactionIndex] Index of interaction to delete, editing interaction when omitted.
+   */
   removeInteraction = (interactionIndex = null) => {
     showConfirmationDialog({
       headerText: this.context.t('deleteInteractionTitle'),
@@ -151,6 +191,10 @@ export default class Main extends React.Component {
     }, () => this.confirmRemoveInteraction(interactionIndex));
   };
 
+  /**
+   * Delete interaction after confirmation.
+   * @param {number} [interactionIndex] Index of interaction to delete, editing interaction when omitted.
+   */
   confirmRemoveInteraction = (interactionIndex = null) => {
     let editingInteraction = interactionIndex;
     if (editingInteraction === null) {
@@ -175,6 +219,11 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Save edited or new interaction.
+   * @param {object} params Parameters of interaction.
+   * @param {object} [sceneParams] Parameters of new scene to save at same time.
+   */
   editInteraction = (params, sceneParams = null) => {
     // Creating scene as well
     if (sceneParams) {
@@ -212,6 +261,10 @@ export default class Main extends React.Component {
     this.scenePreview.trigger('updateEditStateInteraction');
   };
 
+  /**
+   * Change current scene.
+   * @param {number} sceneId ID of scene to switch to.
+   */
   changeScene = (sceneId) => {
     this.setState({
       isSceneUpdated: false,
@@ -220,6 +273,10 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Set start scene.
+   * @param {number} sceneId ID of scene to use as start scene.
+   */
   setStartScene = (sceneId) => {
     this.context.params.startSceneId = sceneId;
     this.setState({
@@ -227,12 +284,19 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Mark scene as initialized.
+   */
   sceneIsInitialized = () => {
     this.setState({
       isSceneUpdated: true,
     });
   };
 
+  /**
+   * Start creating interaction.
+   * @param {object} library Library to create interaction with.
+   */
   createInteraction = (library) => {
     this.setState({
       editingInteraction: InteractionEditingType.NEW_INTERACTION,
@@ -241,7 +305,7 @@ export default class Main extends React.Component {
   };
 
   /**
-   * Handle updating the camera start position when a button is pressed.
+   * Handle updating camera start position when button is pressed.
    */
   handleSetStartingPosition = () => {
     const camera = this.scenePreview.getCamera().camera;
@@ -255,12 +319,21 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Get interaction from index.
+   * @param {number} index Index of interaction in current scene.
+   * @returns {object} Interaction at index.
+   */
   getInteractionFromIndex = (index) => {
     const scenes = this.context.params.scenes;
     const scene = getSceneFromId(scenes, this.state.currentScene);
     return scene.interactions[index];
   };
 
+  /**
+   * Store scene preview and add event listeners.
+   * @param {object} scene Scene preview to add listeners to.
+   */
   setScenePreview = (scene) => {
     this.scenePreview = scene;
 
@@ -335,6 +408,10 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Toggle expanded state of scene selector.
+   * @param {boolean} [forceState] State to force, toggling current state when omitted.
+   */
   toggleExpandSceneSelector = (forceState) => {
     // Disabled
     if (this.state.currentScene === null) {
@@ -351,10 +428,17 @@ export default class Main extends React.Component {
     });
   };
 
+  /**
+   * Close scene selector overlay.
+   */
   handleCloseSceneOverlay = () => {
     this.toggleExpandSceneSelector(false);
   };
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered main editor element.
+   */
   render() {
     const hasScenes = this.context.params.scenes.length > 0;
     const scene = getSceneFromId(this.context.params.scenes, this.state.currentScene);

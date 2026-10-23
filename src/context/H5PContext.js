@@ -2,10 +2,9 @@ import React from 'react';
 import { getInteractionsField } from '../h5phelpers/editorForms.js';
 
 /**
- * Get loaded libraries that are available of the ones defined by action
- * in semantics
- * @param {object} field The field for Gamified Virtual Tour
- * @returns {Promise} Returns with libraries
+ * Get available libraries defined by action in semantics.
+ * @param {object} field Field for gamified virtual tour.
+ * @returns {Promise} Resolves with libraries.
  */
 export const getLibraries = async (field) => {
   const actionField = H5PEditor.findSemanticsField(
@@ -24,9 +23,9 @@ export const getLibraries = async (field) => {
 };
 
 /**
- * Get absolute path to image from relative parameters path
- * @param {string} path Relative path as found in content parameters
- * @returns {string} Absolute path to image
+ * Get absolute path to image from relative parameters path.
+ * @param {string} path Relative path as found in content parameters.
+ * @returns {string} Absolute path to image.
  */
 export const getImageSource = (path) => {
   return H5P.getPath(path, H5PEditor.contentId);

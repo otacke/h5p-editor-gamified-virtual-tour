@@ -15,12 +15,20 @@ import {
 import GoToSceneWrapper from './GoToScene/GoToSceneWrapper.js';
 import { sanitizeSceneForm, validateSceneForm } from '../../h5phelpers/forms/sceneForm.js';
 
+/** @constant {object} InteractionEditingType Interaction editing state identifiers. */
 export const InteractionEditingType = {
   NOT_EDITING: null,
   NEW_INTERACTION: -1,
 };
 
+/**
+ * Render interaction editor dialog.
+ */
 export default class InteractionEditor extends React.Component {
+  /**
+   * Create interaction editor component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
     this.semanticsRef = React.createRef();
@@ -32,6 +40,11 @@ export default class InteractionEditor extends React.Component {
     };
   }
 
+  /**
+   * Get parameters of interaction being edited.
+   * @param {number} [interactionIndex] Index of interaction, new interaction when omitted.
+   * @returns {object} Interaction parameters.
+   */
   getInteractionParams = (interactionIndex = null) => {
     const isNewScene = interactionIndex === InteractionEditingType.NEW_INTERACTION;
 
@@ -44,13 +57,16 @@ export default class InteractionEditor extends React.Component {
     return scene.interactions[interactionIndex];
   };
 
+  /**
+   * Get default position for new interaction.
+   * @returns {string} Position as comma-separated string.
+   */
   getDefaultInteractionPosition = () => {
     const scenes = this.context.params.scenes;
     const scene = getSceneFromId(scenes, this.props.currentScene);
 
     if (scene.sceneType === SceneTypes.STATIC_SCENE) {
-      // Place it in image center
-      // % denotes that its placed on a static image.
+      // Place it in image center, % denotes that its placed on a static image.
       return '50%,50%';
     }
 
@@ -64,6 +80,9 @@ export default class InteractionEditor extends React.Component {
     ].join(',');
   };
 
+  /**
+   * React - run after initial render.
+   */
   async componentDidMount() {
     this.params = this.getInteractionParams(this.props.editingInteraction);
     const field = this.context.field;
@@ -106,6 +125,9 @@ export default class InteractionEditor extends React.Component {
     });
   }
 
+  /**
+   * Handle done button click, validating and saving interaction.
+   */
   handleDone = () => {
     const interactionIndex = this.props.editingInteraction;
     let interactionPosition = null;
@@ -137,6 +159,10 @@ export default class InteractionEditor extends React.Component {
     this.props.doneAction(this.params, this.scene && this.scene.params);
   };
 
+  /**
+   * Validate and sanitize new scene.
+   * @returns {boolean} Whether new scene is valid.
+   */
   validateScene = () => {
     const isValid = validateSceneForm(this.scene.children);
     if (!isValid) {
@@ -154,16 +180,27 @@ export default class InteractionEditor extends React.Component {
     return true;
   };
 
+  /**
+   * Remove input error state.
+   */
   removeInputErrors = () => {
     this.setState({
       hasInputError: false,
     });
   };
 
+  /**
+   * Store new scene.
+   * @param {object} scene New scene to store.
+   */
   setScene = (scene) => {
     this.scene = scene;
   };
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered interaction editor element.
+   */
   render() {
     let title = '';
     let className = '';

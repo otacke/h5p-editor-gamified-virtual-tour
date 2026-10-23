@@ -5,13 +5,21 @@ import './Scene.css';
 import { H5PContext } from '../../context/H5PContext.js';
 import { initializeThreeSixtyPreview } from '../../h5phelpers/h5pComponents.js';
 
+/** @constant {object} SceneTypes Scene type identifiers. */
 export const SceneTypes = {
   THREE_SIXTY_SCENE: '360',
   STATIC_SCENE: 'static',
   NO_SCENE: null,
 };
 
+/**
+ * Render scene preview in editor.
+ */
 export default class Scene extends React.Component {
+  /**
+   * Create scene component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
     this.previewRef = React.createRef();
@@ -20,19 +28,31 @@ export default class Scene extends React.Component {
       isInitialized: false,
     };
 
+    /**
+     * Trigger resize on preview.
+     */
     this.handleResize = () => {
       this.preview.trigger('resize');
     };
   }
 
+  /**
+   * React - run after initial render.
+   */
   componentDidMount() {
     this.initializePreview();
   }
 
+  /**
+   * React - run before unmount.
+   */
   componentWillUnmount() {
     H5P.$window.off('resize', this.handleResize);
   }
 
+  /**
+   * React - update after render.
+   */
   componentDidUpdate() {
     if (this.props.isSceneUpdated) {
       return;
@@ -46,16 +66,25 @@ export default class Scene extends React.Component {
     this.redrawScene();
   }
 
+  /**
+   * Set preview as active scene.
+   */
   setAsActiveScene() {
     this.props.setScenePreview(this.preview);
     this.props.sceneIsInitialized();
   }
 
+  /**
+   * Redraw scene in preview.
+   */
   redrawScene() {
     this.preview.reDraw(this.props.currentScene);
     this.setAsActiveScene();
   }
 
+  /**
+   * Initialize three sixty preview.
+   */
   initializePreview() {
     if (this.context.params.scenes.length <= 0) {
       return;
@@ -83,6 +112,10 @@ export default class Scene extends React.Component {
     });
   }
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered scene element.
+   */
   render() {
     const sceneClasses = ['scene-wrapper'];
     const hasNoScenes = this.context.params.scenes.length <= 0;

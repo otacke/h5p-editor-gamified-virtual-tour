@@ -1,5 +1,6 @@
 import { getSceneFromId } from './sceneParams.js';
 
+/** @constant {object} Libraries Library machine names. */
 export const Libraries = {
   GoToScene: {
     machineName: 'H5P.GoToScene',
@@ -7,9 +8,9 @@ export const Libraries = {
 };
 
 /**
- * Get default params for a library
- * @param {string} uberName The uber name of the library (e.g. H5P.GoToScene).
- * @returns {object} Default params for the library (empty interactionpos, action with the library name).
+ * Get default parameters for library.
+ * @param {string} uberName Uber name of library (e.g. H5P.GoToScene).
+ * @returns {object} Default parameters for library (empty interactionpos, action with library name).
  */
 export const getDefaultLibraryParams = (uberName) => {
   return {
@@ -22,11 +23,11 @@ export const getDefaultLibraryParams = (uberName) => {
 };
 
 /**
- * Updates position of interaction in parameters
- * @param {Array} scenes The scenes in the content.
- * @param {number} sceneId The ID of the scene containing the interaction.
- * @param {number} interactionIndex The index of the interaction within the scene.
- * @param {object} pos The new position with yaw and pitch values.
+ * Update position of interaction in parameters.
+ * @param {Array} scenes Scenes in content.
+ * @param {number} sceneId ID of scene containing interaction.
+ * @param {number} interactionIndex Index of interaction within scene.
+ * @param {object} pos New position with yaw and pitch values.
  */
 export const updatePosition = (scenes, sceneId, interactionIndex, pos) => {
   const scene = getSceneFromId(scenes, sceneId);
@@ -40,9 +41,9 @@ export const updatePosition = (scenes, sceneId, interactionIndex, pos) => {
 };
 
 /**
- * Checks if an interaction is a GoToScene library
- * @param {object} interaction The interaction to check.
- * @returns {boolean} True when the interaction is a GoToScene interaction.
+ * Check if interaction is a GoToScene library.
+ * @param {object} interaction Interaction to check.
+ * @returns {boolean} True when interaction is a GoToScene interaction.
  */
 export const isGoToScene = (interaction) => {
   const library = H5P.libraryFromString(interaction.action.library);

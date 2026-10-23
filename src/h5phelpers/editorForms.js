@@ -1,9 +1,9 @@
 import { getLibraries } from '../context/H5PContext.js';
 
 /**
- * Get scenes field from Gamified Virtual Tour semantics structure
- * @param {object} field The semantics field of the content
- * @returns {object} The scenes semantics field
+ * Get scenes field from Gamified Virtual Tour semantics structure.
+ * @param {object} field Semantics field of content.
+ * @returns {object} Scenes semantics field.
  */
 export const getSceneField = (field) => {
   return H5PEditor.findSemanticsField(
@@ -13,10 +13,9 @@ export const getSceneField = (field) => {
 };
 
 /**
- * Get interactions field within a scene from the Gamified Virtual Tour semantics
- * structure
- * @param {object} field The semantics field of the content
- * @returns {object} The interactions semantics field of a scene
+ * Get interactions field within scene from semantics structure.
+ * @param {object} field Semantics field of content.
+ * @returns {object} Interactions semantics field of scene.
  */
 export const getInteractionsField = (field) => {
   const sceneFields = getSceneField(field);
@@ -28,10 +27,10 @@ export const getInteractionsField = (field) => {
 };
 
 /**
- * Get library data for a single library
- * @param {object} field The semantics field of the content
- * @param {string} library The machine name of the library to find
- * @returns {Promise<object>} A promise resolving to the library data
+ * Get library data for single library.
+ * @param {object} field Semantics field of content.
+ * @param {string} library Machine name of library to find.
+ * @returns {Promise<object>} Promise resolving with library data.
  */
 export const getLibraryDataFromFields = async (field, library) => {
   const libraries = await getLibraries(field);
@@ -41,9 +40,9 @@ export const getLibraryDataFromFields = async (field, library) => {
 };
 
 /**
- * Checks if children are valid and sets error messages for invalid fields.
- * @param {Array<object>} children The children widgets to validate
- * @returns {boolean} True if all children are valid
+ * Check if children are valid and set error messages for invalid fields.
+ * @param {Array<object>} children Children widgets to validate.
+ * @returns {boolean} True if all children are valid.
  */
 export const isChildrenValid = (children) => {
   let isInputsValid = true;
@@ -74,6 +73,11 @@ export const isChildrenValid = (children) => {
   return isInputsValid;
 };
 
+/**
+ * Add change listeners to behavior widgets.
+ * @param {object} parent Parent field with behavior widgets.
+ * @param {function} callback Callback to run on behavior change.
+ */
 const addBehavioralChangeListeners = (parent, callback) => {
   const behaviour = parent.children.find((child) => {
     return child.field.name === 'behaviour';
@@ -94,6 +98,11 @@ const addBehavioralChangeListeners = (parent, callback) => {
   sceneRendering.changes.push(callback);
 };
 
+/**
+ * Add change listeners to behavior widgets, waiting for ready when children not loaded.
+ * @param {object} parent Parent field with behavior widgets.
+ * @param {function} callback Callback to run on behavior change.
+ */
 export const addBehavioralListeners = (parent, callback) => {
   if (parent.children.length === 0) {
     parent.ready(() => {

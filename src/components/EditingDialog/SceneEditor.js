@@ -15,18 +15,30 @@ import {
   validateSceneForm,
 } from '../../h5phelpers/forms/sceneForm.js';
 
+/** @constant {object} SceneEditingType Scene editing state identifiers. */
 export const SceneEditingType = {
   NOT_EDITING: null,
   NEW_SCENE: -1,
 };
 
+/**
+ * Render scene editor dialog.
+ */
 export default class SceneEditor extends React.Component {
+  /**
+   * Create scene editor component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
 
     this.semanticsRef = React.createRef();
   }
 
+  /**
+   * Get parameters of scene being edited.
+   * @returns {object} Scene parameters.
+   */
   getSceneParams = () => {
     const scenes = this.context.params.scenes;
 
@@ -38,6 +50,9 @@ export default class SceneEditor extends React.Component {
     return getSceneFromId(scenes, this.props.editingScene);
   };
 
+  /**
+   * React - run after initial render.
+   */
   componentDidMount() {
     this.params = this.getSceneParams();
 
@@ -56,6 +71,9 @@ export default class SceneEditor extends React.Component {
     this.context.parent.children = this.parentChildren;
   }
 
+  /**
+   * Handle done button click, validating and saving scene.
+   */
   handleDone = () => {
     const isValid = validateSceneForm(this.children);
     if (!isValid) {
@@ -79,6 +97,9 @@ export default class SceneEditor extends React.Component {
 
   };
 
+  /**
+   * Sanitize scene form and trigger done action.
+   */
   confirmDone = () => {
     const isThreeSixtyScene = this.params.sceneType
       === SceneTypes.THREE_SIXTY_SCENE;
@@ -92,6 +113,10 @@ export default class SceneEditor extends React.Component {
     this.props.doneAction(this.params);
   };
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered scene editor element.
+   */
   render() {
     return (
       <EditingDialog

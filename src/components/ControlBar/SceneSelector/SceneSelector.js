@@ -5,7 +5,14 @@ import './SceneSelector.css';
 import ActiveSceneRow from './Row/ActiveSceneRow.js';
 import ExpandedSceneSelector from './ExpandedSceneSelector.js';
 
+/**
+ * Render scene selector with active scene and expanded scene list.
+ */
 export default class SceneSelector extends React.Component {
+  /**
+   * Create scene selector component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
 
@@ -14,6 +21,10 @@ export default class SceneSelector extends React.Component {
     };
   }
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered scene selector element.
+   */
   render() {
     const scenes = this.context.params.scenes;
     const activeScene = scenes.find((scene) => {

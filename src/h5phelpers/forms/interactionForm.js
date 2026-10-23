@@ -1,11 +1,11 @@
 import { getInteractionsField, isChildrenValid } from '../editorForms.js';
 
 /**
- * Create interaction form and append it to wrapper
- * @param {object} field The semantics field of the content
- * @param {object} params The interaction parameters
- * @param {HTMLElement} wrapper The DOM element to append the form to
- * @param {object} parent The parent widget
+ * Create interaction form and append it to wrapper.
+ * @param {object} field Semantics field of content.
+ * @param {object} params Interaction parameters.
+ * @param {HTMLElement} wrapper DOM element to append form to.
+ * @param {object} parent Parent widget.
  */
 export const createInteractionForm = (field, params, wrapper, parent) => {
   const hiddenFormFields = [
@@ -44,10 +44,10 @@ export const createInteractionForm = (field, params, wrapper, parent) => {
 };
 
 /**
- * Set interaction position parameter
- * @param {object} params The interaction parameters
- * @param {string} interactionPosition The interaction position as a comma separated string
- * @returns {object} The updated interaction parameters
+ * Set interaction position parameter.
+ * @param {object} params Interaction parameters.
+ * @param {string} interactionPosition Interaction position as comma separated string.
+ * @returns {object} Updated interaction parameters.
  */
 export const sanitizeInteractionParams = (params, interactionPosition) => {
   if (interactionPosition) {
@@ -58,9 +58,9 @@ export const sanitizeInteractionParams = (params, interactionPosition) => {
 };
 
 /**
- * Checks if interaction form is valid and marks invalid fields with an error
- * @param {Array<object>} children The children widgets of the interaction form
- * @returns {boolean} True if all children are valid
+ * Check if interaction form is valid and mark invalid fields with error.
+ * @param {Array<object>} children Children widgets of interaction form.
+ * @returns {boolean} True if all children are valid.
  */
 export const validateInteractionForm = (children) => {
   H5PEditor.Html.removeWysiwyg();

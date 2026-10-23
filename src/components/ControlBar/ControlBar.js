@@ -9,7 +9,14 @@ import SceneList from './SceneSelector/SceneList.js';
 import SceneSelectorSubmenu from './SceneSelector/Row/Submenu/SceneSelectorSubmenu.js';
 import SceneSelector from './SceneSelector/SceneSelector.js';
 
+/**
+ * Render control bar with scene selector and buttons.
+ */
 export default class ControlBar extends Component {
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered control bar element.
+   */
   render() {
     const scenes = this.context.params.scenes;
     const scene = getSceneFromId(scenes, this.props.currentScene);

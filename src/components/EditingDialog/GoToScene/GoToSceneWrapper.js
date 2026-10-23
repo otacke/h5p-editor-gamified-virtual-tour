@@ -4,7 +4,14 @@ import GoToScene from './Selector/GoToScene.js';
 import { createSceneForm, getDefaultSceneParams } from '../../../h5phelpers/forms/sceneForm.js';
 import { H5PContext } from '../../../context/H5PContext.js';
 
+/**
+ * Render wrapper for go-to-scene interaction.
+ */
 export default class GoToSceneWrapper extends Component {
+  /**
+   * Create go-to-scene wrapper component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
 
@@ -16,6 +23,9 @@ export default class GoToSceneWrapper extends Component {
     };
   }
 
+  /**
+   * Create new scene and mark it as next scene.
+   */
   createNewScene = () => {
     // Process semantics for new scene
     const scenes = this.context.params.scenes;
@@ -48,6 +58,10 @@ export default class GoToSceneWrapper extends Component {
     });
   };
 
+  /**
+   * Update next scene ID and mark scene.
+   * @param {number} sceneId ID of scene to mark as next.
+   */
   setNextSceneId = (sceneId) => {
     // Update number widget and params
     const nextSceneIdWidget = this.props.nextSceneIdWidget;
@@ -60,6 +74,10 @@ export default class GoToSceneWrapper extends Component {
     });
   };
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered go-to-scene wrapper element.
+   */
   render() {
     const classes = ['go-to-scene-wrapper'];
     if (this.state.isCreatingNewScene) {

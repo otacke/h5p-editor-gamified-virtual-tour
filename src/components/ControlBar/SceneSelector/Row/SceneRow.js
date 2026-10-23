@@ -5,10 +5,20 @@ import './SceneRow.css';
 import { getImageSource } from '../../../../context/H5PContext.js';
 import { H5PContext } from '../../../../context/H5PContext.js';
 
+/** @constant {number} AspectRatioWidth Width of thumbnail aspect ratio. */
 const AspectRatioWidth = 4;
+
+/** @constant {number} AspectRatioHeight Height of thumbnail aspect ratio. */
 const AspectRatioHeight = 3;
 
+/**
+ * Render scene row with thumbnail and scene name.
+ */
 export default class SceneRow extends Component {
+  /**
+   * Create scene row component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
 
@@ -19,6 +29,9 @@ export default class SceneRow extends Component {
     };
   }
 
+  /**
+   * Check if thumbnail image is vertical.
+   */
   onImageLoad = () => {
     const image = this.imageRef.current;
     const ratio = AspectRatioWidth / AspectRatioHeight;
@@ -28,18 +41,28 @@ export default class SceneRow extends Component {
     });
   };
 
+  /**
+   * Trigger scene click handler.
+   */
   onSceneClick = () => {
     if (this.props.onSceneClick) {
       this.props.onSceneClick(this.props.scene.sceneId);
     }
   };
 
+  /**
+   * Trigger title click handler.
+   */
   onTitleClick = () => {
     if (this.props.onTitleClick) {
       this.props.onTitleClick(this.props.scene.sceneId);
     }
   };
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered scene row element.
+   */
   render() {
 
     const rowClasses = ['h5p-scene-row'];

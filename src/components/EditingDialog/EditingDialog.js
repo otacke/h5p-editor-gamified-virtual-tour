@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './EditingDialog.css';
 
+/**
+ * Render editing dialog with title, remove and done buttons.
+ * @param {object} props Component props.
+ * @returns {React.Element} Rendered editing dialog element.
+ */
 const EditingDialog = (props) => {
   const titleClasses = [
     'title',

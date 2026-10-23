@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import './InteractionsBar.css';
 import { getLibraries, H5PContext } from '../../context/H5PContext.js';
 
+/**
+ * Render bar with buttons to create interactions.
+ */
 export default class InteractionsBar extends React.Component {
+  /**
+   * Create interactions bar component.
+   * @param {object} props Component props.
+   */
   constructor(props) {
     super(props);
 
@@ -13,6 +20,9 @@ export default class InteractionsBar extends React.Component {
     };
   }
 
+  /**
+   * React - run after initial render.
+   */
   async componentDidMount() {
     const libraries = await getLibraries(this.context.field);
     this.setState({
@@ -21,6 +31,10 @@ export default class InteractionsBar extends React.Component {
     });
   }
 
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element|null} Rendered interactions bar element, or null if not showing.
+   */
   render() {
     if (!this.props.isShowing) {
       return null;

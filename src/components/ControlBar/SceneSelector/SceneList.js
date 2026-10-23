@@ -3,9 +3,9 @@ import React from 'react';
 import SceneRow from './Row/SceneRow.js';
 
 /**
- * Renders the list of scenes in the scene selector
- * @param {object} props The component props
- * @returns {object} The rendered scene list
+ * Render scene list for scene selector.
+ * @param {object} props Component props.
+ * @returns {React.Element} Rendered scene list.
  */
 const SceneList = (props) => {
   let previousElementHasTopBorder = false;

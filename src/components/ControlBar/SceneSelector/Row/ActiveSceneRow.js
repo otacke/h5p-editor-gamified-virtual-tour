@@ -5,6 +5,11 @@ import { SceneTypes } from '../../../Scene/Scene.js';
 import PropTypes from 'prop-types';
 
 
+/**
+ * Render active scene row.
+ * @param {object} props Component props.
+ * @returns {React.Element} Rendered active scene row element.
+ */
 const ActiveSceneRow = (props) => {
   if (!props.scene) {
     return (

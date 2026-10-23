@@ -4,13 +4,16 @@ import Main from './components/Main.js';
 import { H5PContext } from './context/H5PContext.js';
 
 /**
- * Initializes the Gamified Virtual Tour editor
- * @param {object} parent The parent widget
- * @param {object} field The semantics field of the content
- * @param {object} params The initial parameters of the content
- * @param {function} setValue Function to update the content parameters
+ * H5P content editor for gamified virtual tour.
  */
 H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class GamifiedVirtualTour {
+  /**
+   * Create instance of GamifiedVirtualTour.
+   * @param {object} parent Parent widget.
+   * @param {object} field Semantics field of content.
+   * @param {object} params Initial parameters of content.
+   * @param {function} setValue Function to update content parameters.
+   */
   constructor(parent, field, params, setValue) {
     this.params = params || {};
     this.params = Object.assign({
@@ -27,7 +30,7 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
 
   /**
    * Help fetch the correct translations.
-   * @returns {string} The translated string
+   * @returns {string} Translated string.
    */
   t() {
     const args = ['H5PEditor.GamifiedVirtualTour'];
@@ -37,6 +40,10 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
     return H5PEditor.t.apply(window, args);
   }
 
+  /**
+   * Append editor to container.
+   * @param {object} $container jQuery object of container.
+   */
   appendTo($container) {
     const wrapper = document.createElement('div');
     wrapper.classList.add('h5p-editor-gamified-virtual-tour-wrapper');
@@ -58,6 +65,9 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
     );
   }
 
+  /**
+   * Update mobile class on wrapper based on wrapper size.
+   */
   resize = () => {
     if (!this.wrapper) {
       return;
@@ -74,6 +84,10 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
     }
   };
 
+  /**
+   * Notify that editor is ready.
+   * @param {function} ready Callback to run when editor is ready.
+   */
   ready(ready) {
     if (this.passReadies) {
       this.parent.ready(ready);
@@ -83,6 +97,10 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
     }
   }
 
+  /**
+   * Validate content parameters.
+   * @returns {boolean} True, as parameters are always valid.
+   */
   validate() {
     return true;
   }

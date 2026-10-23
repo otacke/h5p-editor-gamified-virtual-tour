@@ -1,9 +1,9 @@
 /**
- * Initializes Three Sixty content from parameters
- * @param {object} container The DOM element to initialize the preview in.
- * @param {object} params The content parameters.
- * @param {object} l10n The language strings to use in the preview.
- * @returns {object} The initialized runnable instance.
+ * Initialize three sixty preview from parameters.
+ * @param {object} container DOM element to initialize preview in.
+ * @param {object} params Content parameters.
+ * @param {object} l10n Language strings for preview.
+ * @returns {object} Initialized runnable instance.
  */
 export const initializeThreeSixtyPreview = (container, params, l10n) => {
   const library = Object.keys(H5PEditor.libraryLoaded)
@@ -27,10 +27,10 @@ export const initializeThreeSixtyPreview = (container, params, l10n) => {
 };
 
 /**
- * Shows confirmation dialog
- * @param {object} dialogOptions Options for the confirmation dialog (title and text).
- * @param {function} confirm Callback called when the dialog is confirmed.
- * @param {function} cancel Callback called when the dialog is canceled.
+ * Show confirmation dialog.
+ * @param {object} dialogOptions Options for confirmation dialog (title and text).
+ * @param {function} confirm Callback to run when dialog is confirmed.
+ * @param {function} cancel Callback to run when dialog is canceled.
  */
 export const showConfirmationDialog = (dialogOptions, confirm, cancel) => {
   const deleteDialog = new H5P.ConfirmationDialog(dialogOptions)

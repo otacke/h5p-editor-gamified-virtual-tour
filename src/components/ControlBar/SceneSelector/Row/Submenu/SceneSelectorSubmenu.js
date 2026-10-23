@@ -2,12 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SceneSelectorSubmenu.css';
 
+/**
+ * Render scene selector submenu.
+ * @param {object} props Component props.
+ * @returns {React.Element} Rendered scene selector submenu element.
+ */
 const SceneSelectorSubmenu = (props) => {
-
   /**
+   * Get click handler for given prop.
+   * @param {string} type Name of prop containing click handler.
+   * @returns {function} Click handler stopping propagation and calling prop.
+   *
    * TODO: Use separate <Button> component for mapping instead.
    */
-
   const handleClick = (type) => {
     return (e) => {
       e.stopPropagation();

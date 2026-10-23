@@ -4,8 +4,14 @@ import { H5PContext } from '../../../../context/H5PContext.js';
 import './GoToScene.css';
 import GoToSceneSelector from './GoToSceneSelector.js';
 
+/**
+ * Render go-to-scene selector with new scene button.
+ */
 export default class GoToScene extends Component {
-
+  /**
+   * React - create DOM elements.
+   * @returns {React.Element} Rendered go-to-scene element.
+   */
   render() {
     // Filter out current scene
     const scenes = this.context.params.scenes.filter((scene) => {
