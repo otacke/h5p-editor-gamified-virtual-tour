@@ -112,7 +112,7 @@ export const getDefaultSceneParams = (scenes) => {
  * @returns {boolean} True when interaction position is valid for scene type.
  */
 const isInteractionPositionValid = (interaction, isThreeSixty) => {
-  const position = interaction.interactionpos.split(',');
+  const position = [interaction.interactionPosition.x, interaction.interactionPosition.y];
   return position.every((pos) => {
     const hasThreeSixtyPos = pos.substr(-1) !== '%';
     return hasThreeSixtyPos === isThreeSixty;
@@ -127,7 +127,7 @@ const isInteractionPositionValid = (interaction, isThreeSixty) => {
  */
 const sanitizeInteractionPositions = (interaction, isThreeSixty, cameraPos) => {
   if (!isInteractionPositionValid(interaction, isThreeSixty)) {
-    interaction.interactionpos = getNewInteractionPos(isThreeSixty, cameraPos);
+    interaction.interactionPosition = getNewInteractionPos(isThreeSixty, cameraPos);
   }
 };
 
@@ -135,7 +135,7 @@ const sanitizeInteractionPositions = (interaction, isThreeSixty, cameraPos) => {
  * Get default interaction position given scene type.
  * @param {boolean} isThreeSixtyScene Whether position is for a 360 scene.
  * @param {object} cameraPos Camera position with yaw and pitch.
- * @returns {string} New position as comma separated values (degrees for 360 scenes, percentages otherwise).
+ * @returns {object} New position with x and y (yaw and pitch for 360 scenes, percentages otherwise).
  */
 const getNewInteractionPos = (isThreeSixtyScene, cameraPos) => {
   // Place interactions spread randomly within a threshold in degrees
@@ -148,9 +148,10 @@ const getNewInteractionPos = (isThreeSixtyScene, cameraPos) => {
     spread = DefaultInteractionValues.threeSixty.spread * Math.PI / 180;
   }
 
-  return center.map((pos) => spreadByValue(pos, spread))
-    .map((pos) => isThreeSixtyScene ? pos : `${pos}%`)
-    .join(',');
+  const [x, y] = center.map((pos) => spreadByValue(pos, spread))
+    .map((pos) => isThreeSixtyScene ? `${pos}` : `${pos}%`);
+
+  return { x, y };
 };
 
 /**

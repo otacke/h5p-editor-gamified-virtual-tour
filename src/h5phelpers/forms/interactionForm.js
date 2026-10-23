@@ -9,7 +9,7 @@ import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.j
  */
 export const createInteractionForm = (field, params, wrapper, parent) => {
   const hiddenFormFields = [
-    'interactionpos',
+    'interactionPosition',
   ];
 
   const interactionsField = getInteractionsField(field);
@@ -46,12 +46,12 @@ export const createInteractionForm = (field, params, wrapper, parent) => {
 /**
  * Set interaction position parameter.
  * @param {object} params Interaction parameters.
- * @param {string} interactionPosition Interaction position as comma separated string.
+ * @param {object} interactionPosition Interaction position with x and y.
  * @returns {object} Updated interaction parameters.
  */
 export const sanitizeInteractionParams = (params, interactionPosition) => {
   if (interactionPosition) {
-    params.interactionpos = interactionPosition;
+    params.interactionPosition = interactionPosition;
   }
 
   return params;

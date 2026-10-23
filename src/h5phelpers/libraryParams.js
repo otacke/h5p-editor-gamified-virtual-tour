@@ -10,11 +10,11 @@ export const Libraries = {
 /**
  * Get default parameters for library.
  * @param {string} uberName Uber name of library (e.g. H5P.GoToScene).
- * @returns {object} Default parameters for library (empty interactionpos, action with library name).
+ * @returns {object} Default parameters for library (empty interactionPosition, action with library name).
  */
 export const getDefaultLibraryParams = (uberName) => {
   return {
-    interactionpos: '', // Filled in on saving interaction
+    interactionPosition: { x: '', y: '' }, // Filled in on saving interaction
     action: {
       library: uberName,
       params: {},
@@ -34,10 +34,10 @@ export const updatePosition = (scenes, sceneId, interactionIndex, pos) => {
   const interaction = scene.interactions[interactionIndex];
 
   // Update interaction pos
-  interaction.interactionpos = [
-    pos.yaw,
-    pos.pitch,
-  ].join(',');
+  interaction.interactionPosition = {
+    x: `${pos.yaw}`,
+    y: `${pos.pitch}`,
+  };
 };
 
 /**

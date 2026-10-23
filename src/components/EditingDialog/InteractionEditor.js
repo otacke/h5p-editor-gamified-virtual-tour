@@ -59,7 +59,7 @@ export default class InteractionEditor extends React.Component {
 
   /**
    * Get default position for new interaction.
-   * @returns {string} Position as comma-separated string.
+   * @returns {object} Position with x and y.
    */
   getDefaultInteractionPosition = () => {
     const scenes = this.context.params.scenes;
@@ -67,17 +67,15 @@ export default class InteractionEditor extends React.Component {
 
     if (scene.sceneType === SceneTypes.STATIC_SCENE) {
       // Place it in image center, % denotes that its placed on a static image.
-      return '50%,50%';
+      return { x: '50%', y: '50%' };
     }
 
     const camera = this.props.scenePreview.getCamera();
-    const yaw = camera.camera.yaw;
-    const pitch = camera.camera.pitch;
 
-    return [
-      yaw,
-      pitch,
-    ].join(',');
+    return {
+      x: `${camera.camera.yaw}`,
+      y: `${camera.camera.pitch}`,
+    };
   };
 
   /**
