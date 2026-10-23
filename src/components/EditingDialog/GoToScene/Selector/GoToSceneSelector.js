@@ -12,7 +12,7 @@ const GoToSceneSelector = (props) => (
     <SceneList
       scenes={props.scenes}
       markedScene={props.markedScene}
-      onSceneClick={props.setNextSceneId.bind(this)}
+      onSceneClick={props.setNextSceneId}
       isShowingCheck={true}
     />
   </div>

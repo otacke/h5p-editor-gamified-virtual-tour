@@ -25,7 +25,7 @@ export default class GoToScene extends Component {
             <GoToSceneSelector
               scenes={scenes}
               markedScene={this.props.markedScene}
-              setNextSceneId={this.props.setNextSceneId.bind(this)}
+              setNextSceneId={this.props.setNextSceneId}
               selectASceneErrorLabel={this.context.t('selectASceneError')}
               pickAnExistingSceneLabel={this.context.t('pickAnExistingScene')}
             />
@@ -40,7 +40,7 @@ export default class GoToScene extends Component {
           }
           <button
             className='h5p-new-scene-button'
-            onClick={this.props.newScene.bind(this)}
+            onClick={this.props.newScene}
           >+ {this.context.t('newScene')}</button>
         </div>
       </div>

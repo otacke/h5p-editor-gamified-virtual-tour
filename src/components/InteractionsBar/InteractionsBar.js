@@ -42,7 +42,7 @@ export default class InteractionsBar extends React.Component {
               <button
                 className={className}
                 key={library.name}
-                onClick={this.props.createInteraction.bind(this, library)}
+                onClick={() => this.props.createInteraction(library)}
               >
                 <div className='tooltip'>{library.title}</div>
               </button>

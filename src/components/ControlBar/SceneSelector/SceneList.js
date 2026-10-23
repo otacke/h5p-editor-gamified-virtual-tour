@@ -7,7 +7,7 @@ import SceneRow from './Row/SceneRow.js';
  * @param {object} props The component props
  * @returns {object} The rendered scene list
  */
-function SceneList(props) {
+const SceneList = (props) => {
   let previousElementHasTopBorder = false;
 
   return (
@@ -46,7 +46,7 @@ function SceneList(props) {
       }
     </div>
   );
-}
+};
 
 SceneList.propTypes = {
   scenes: PropTypes.arrayOf(PropTypes.shape({

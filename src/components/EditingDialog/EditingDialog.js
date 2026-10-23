@@ -17,11 +17,11 @@ const EditingDialog = (props) => {
           <div className='h5p-editing-dialog-button-row'>
             <button
               className='remove-button'
-              onClick={props.removeAction.bind(this)}
+              onClick={props.removeAction}
             >{props.removeLabel}</button>
             <button
               className='done-button'
-              onClick={props.doneAction.bind(this)}
+              onClick={props.doneAction}
             >{props.doneLabel}</button>
           </div>
         </div>

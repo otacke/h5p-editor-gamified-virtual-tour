@@ -22,7 +22,7 @@ export default class ControlBar extends Component {
         <SceneSelector
           currentScene={this.props.currentScene}
           isExpanded={this.props.isSceneSelectorExpanded}
-          toggleExpand={this.props.toggleExpandSceneSelector.bind(this)}
+          toggleExpand={this.props.toggleExpandSceneSelector}
         >
           <SceneList
             scenes={this.context.params.scenes}
@@ -33,10 +33,10 @@ export default class ControlBar extends Component {
             {(isStartScene, sceneId) => (
               <SceneSelectorSubmenu
                 isStartScene={isStartScene}
-                setStartScene={this.props.setStartScene.bind(this, sceneId)}
-                onJump={this.props.changeScene.bind(this, sceneId)}
-                onEdit={this.props.editScene.bind(this, sceneId)}
-                onDelete={this.props.deleteScene.bind(this, sceneId)}
+                setStartScene={() => this.props.setStartScene(sceneId)}
+                onJump={() => this.props.changeScene(sceneId)}
+                onEdit={() => this.props.editScene(sceneId)}
+                onDelete={() => this.props.deleteScene(sceneId)}
                 setStartingSceneLabel={this.context.t('setStartingScene')}
                 goToSceneLabel={this.context.t('goToScene')}
                 editLabel={this.context.t('edit')}
@@ -48,7 +48,7 @@ export default class ControlBar extends Component {
         <div className='buttons-wrapper'>
           <button
             className='h5p-new-scene-button'
-            onClick={this.props.newScene.bind(this, SceneEditingType.NEW_SCENE)}
+            onClick={() => this.props.newScene(SceneEditingType.NEW_SCENE)}
           >+ {this.context.t('newScene')}</button>
           {
             is360Scene &&

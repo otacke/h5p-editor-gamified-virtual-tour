@@ -19,26 +19,26 @@ export default class SceneRow extends Component {
     };
   }
 
-  onImageLoad() {
+  onImageLoad = () => {
     const image = this.imageRef.current;
     const ratio = AspectRatioWidth / AspectRatioHeight;
 
     this.setState({
       isVerticalImage: image.naturalWidth / image.naturalHeight < ratio,
     });
-  }
+  };
 
-  onSceneClick() {
+  onSceneClick = () => {
     if (this.props.onSceneClick) {
       this.props.onSceneClick(this.props.scene.sceneId);
     }
-  }
+  };
 
-  onTitleClick() {
+  onTitleClick = () => {
     if (this.props.onTitleClick) {
       this.props.onTitleClick(this.props.scene.sceneId);
     }
-  }
+  };
 
   render() {
 
@@ -67,21 +67,21 @@ export default class SceneRow extends Component {
     return (
       <div
         className={rowClasses.join(' ')}
-        onClick={this.onSceneClick.bind(this)}
+        onClick={this.onSceneClick}
       >
         <div className='thumbnail-wrapper'>
           <img
             className={imageClasses.join(' ')}
             src={getImageSource(this.props.scene.scenesrc.path)}
             alt={this.props.scene.scenesrc.alt}
-            onLoad={this.onImageLoad.bind(this)}
+            onLoad={this.onImageLoad}
             ref={this.imageRef}
           />
         </div>
         <div className='scene-wrapper'>
           <div
             className='h5p-scene-name'
-            onClick={this.onTitleClick.bind(this)}
+            onClick={this.onTitleClick}
             dangerouslySetInnerHTML={ { __html: this.props.scene.scenename } }
           ></div>
           {

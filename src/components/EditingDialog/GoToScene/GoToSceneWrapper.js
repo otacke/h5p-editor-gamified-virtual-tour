@@ -16,7 +16,7 @@ export default class GoToSceneWrapper extends Component {
     };
   }
 
-  createNewScene() {
+  createNewScene = () => {
     // Process semantics for new scene
     const scenes = this.context.params.scenes;
     const params = getDefaultSceneParams(scenes);
@@ -46,9 +46,9 @@ export default class GoToSceneWrapper extends Component {
     this.setState({
       isCreatingNewScene: true,
     });
-  }
+  };
 
-  setNextSceneId(sceneId) {
+  setNextSceneId = (sceneId) => {
     // Update number widget and params
     const nextSceneIdWidget = this.props.nextSceneIdWidget;
     nextSceneIdWidget.$input.val(sceneId);
@@ -58,7 +58,7 @@ export default class GoToSceneWrapper extends Component {
     this.setState({
       markedScene: sceneId,
     });
-  }
+  };
 
   render() {
     const classes = ['go-to-scene-wrapper'];
@@ -75,8 +75,8 @@ export default class GoToSceneWrapper extends Component {
             markedScene={this.state.markedScene}
             currentScene={this.props.currentScene}
             hasInputError={this.props.hasInputError}
-            newScene={this.createNewScene.bind(this)}
-            setNextSceneId={this.setNextSceneId.bind(this)}
+            newScene={this.createNewScene}
+            setNextSceneId={this.setNextSceneId}
           />
         }
         <div ref={this.newScene} />

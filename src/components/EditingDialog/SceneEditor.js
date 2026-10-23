@@ -6,9 +6,9 @@ import { H5PContext } from '../../context/H5PContext.js';
 import { SceneTypes } from '../Scene/Scene.js';
 import './SceneEditor.css';
 import { getSceneFromId } from '../../h5phelpers/sceneParams.js';
-import { createSceneForm } from '../../h5phelpers/forms/sceneForm.js';
 import { showConfirmationDialog } from '../../h5phelpers/h5pComponents.js';
 import {
+  createSceneForm,
   getDefaultSceneParams,
   isInteractionsValid,
   sanitizeSceneForm,
@@ -27,7 +27,7 @@ export default class SceneEditor extends React.Component {
     this.semanticsRef = React.createRef();
   }
 
-  getSceneParams() {
+  getSceneParams = () => {
     const scenes = this.context.params.scenes;
 
     // New scene
@@ -36,7 +36,7 @@ export default class SceneEditor extends React.Component {
     }
 
     return getSceneFromId(scenes, this.props.editingScene);
-  }
+  };
 
   componentDidMount() {
     this.params = this.getSceneParams();
@@ -56,7 +56,7 @@ export default class SceneEditor extends React.Component {
     this.context.parent.children = this.parentChildren;
   }
 
-  handleDone() {
+  handleDone = () => {
     const isValid = validateSceneForm(this.children);
     if (!isValid) {
       return;
@@ -75,11 +75,11 @@ export default class SceneEditor extends React.Component {
       dialogText: this.context.t('changeSceneBody'),
       cancelText: this.context.t('cancel'),
       confirmText: this.context.t('confirm'),
-    }, this.confirmDone.bind(this));
+    }, () => this.confirmDone());
 
-  }
+  };
 
-  confirmDone() {
+  confirmDone = () => {
     const isThreeSixtyScene = this.params.sceneType
       === SceneTypes.THREE_SIXTY_SCENE;
 
@@ -90,7 +90,7 @@ export default class SceneEditor extends React.Component {
     );
 
     this.props.doneAction(this.params);
-  }
+  };
 
   render() {
     return (
@@ -98,7 +98,7 @@ export default class SceneEditor extends React.Component {
         title={this.context.t('scene')}
         titleClasses={['scene']}
         removeAction={this.props.removeAction}
-        doneAction={this.handleDone.bind(this)}
+        doneAction={this.handleDone}
         doneLabel={this.context.t('done')}
         removeLabel={this.context.t('remove')}
       >

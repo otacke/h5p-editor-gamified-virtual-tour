@@ -30,7 +30,7 @@ export default class SceneSelector extends React.Component {
         <div
           id='scene-selector'
           className={sceneSelectorClasses.join(' ')}
-          onClick={this.props.toggleExpand.bind(this, undefined)}
+          onClick={() => this.props.toggleExpand(undefined)}
         >
           <div className='h5p-select-content'>
             <ActiveSceneRow

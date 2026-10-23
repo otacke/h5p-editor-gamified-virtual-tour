@@ -32,7 +32,7 @@ export default class InteractionEditor extends React.Component {
     };
   }
 
-  getInteractionParams(interactionIndex = null) {
+  getInteractionParams = (interactionIndex = null) => {
     const isNewScene = interactionIndex === InteractionEditingType.NEW_INTERACTION;
 
     if (isNewScene) {
@@ -42,9 +42,9 @@ export default class InteractionEditor extends React.Component {
     const scenes = this.context.params.scenes;
     const scene = getSceneFromId(scenes, this.props.currentScene);
     return scene.interactions[interactionIndex];
-  }
+  };
 
-  getDefaultInteractionPosition() {
+  getDefaultInteractionPosition = () => {
     const scenes = this.context.params.scenes;
     const scene = getSceneFromId(scenes, this.props.currentScene);
 
@@ -62,7 +62,7 @@ export default class InteractionEditor extends React.Component {
       yaw,
       pitch,
     ].join(',');
-  }
+  };
 
   async componentDidMount() {
     this.params = this.getInteractionParams(this.props.editingInteraction);
@@ -95,7 +95,7 @@ export default class InteractionEditor extends React.Component {
       libraryLoadedCallback();
     }
     else {
-      this.libraryWidget.change(libraryLoadedCallback.bind(this));
+      this.libraryWidget.change(libraryLoadedCallback);
     }
 
     const uberName = this.params.action.library;
@@ -106,7 +106,7 @@ export default class InteractionEditor extends React.Component {
     });
   }
 
-  handleDone() {
+  handleDone = () => {
     const interactionIndex = this.props.editingInteraction;
     let interactionPosition = null;
 
@@ -135,9 +135,9 @@ export default class InteractionEditor extends React.Component {
     }
 
     this.props.doneAction(this.params, this.scene && this.scene.params);
-  }
+  };
 
-  validateScene() {
+  validateScene = () => {
     const isValid = validateSceneForm(this.scene.children);
     if (!isValid) {
       return false;
@@ -152,17 +152,17 @@ export default class InteractionEditor extends React.Component {
       this.scene.params.cameraStartPosition,
     );
     return true;
-  }
+  };
 
-  removeInputErrors() {
+  removeInputErrors = () => {
     this.setState({
       hasInputError: false,
     });
-  }
+  };
 
-  setScene(scene) {
+  setScene = (scene) => {
     this.scene = scene;
-  }
+  };
 
   render() {
     let title = '';
@@ -185,7 +185,7 @@ export default class InteractionEditor extends React.Component {
         title={title}
         titleClasses={[className]}
         removeAction={this.props.removeAction}
-        doneAction={this.handleDone.bind(this)}
+        doneAction={this.handleDone}
         doneLabel={this.context.t('done')}
         removeLabel={this.context.t('remove')}
       >
@@ -193,12 +193,12 @@ export default class InteractionEditor extends React.Component {
         {
           this.state.isInitialized && isGoToScene(this.params) &&
           <GoToSceneWrapper
-            selectedScene={this.removeInputErrors.bind(this)}
+            selectedScene={this.removeInputErrors}
             hasInputError={this.state.hasInputError}
             nextSceneIdWidget={this.libraryWidget.children[0]}
             currentScene={this.props.currentScene}
             params={this.params}
-            setScene={this.setScene.bind(this)}
+            setScene={this.setScene}
           />
         }
       </EditingDialog>
