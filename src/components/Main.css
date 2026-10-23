@@ -11,12 +11,6 @@
 
 .h5p-gamifiedvirtualtour-editor .scene-editor {
   position: relative;
-  /*****
-  Might be added to get the inital design (no spacing on the sides). But
-  probably needs to be removed in fullscreen.
-  left: -1.25em;
-  width: calc(100% + 2.5em);
-  ******/
 }
 
 .h5p-gamifiedvirtualtour-editor .scene-wrapper.no-scenes .scene-container {
