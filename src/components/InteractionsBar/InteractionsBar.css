@@ -5,6 +5,9 @@
   background: #f5f5f5;
   border-top: 1px solid #d1d1d1;
   border-bottom: 1px solid #d1d1d1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 
   & button {
     box-sizing: content-box;
@@ -14,7 +17,6 @@
 
     width: 1.2rem;
     height: 1.32rem;
-    margin-right: 0.48rem;
     padding: 0.3rem 0.78rem;
 
     cursor: pointer;
