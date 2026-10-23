@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Main from './components/Main.js';
 import { H5PContext } from './context/H5PContext.js';
 
@@ -51,11 +51,10 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
       startScene = this.params.startSceneId;
     }
 
-    ReactDOM.render(
+    createRoot(wrapper).render(
       <H5PContext.Provider value={this}>
         <Main initialScene={startScene} />
       </H5PContext.Provider>,
-      wrapper,
     );
   }
 
