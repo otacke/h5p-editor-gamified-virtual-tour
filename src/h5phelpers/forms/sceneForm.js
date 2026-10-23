@@ -149,7 +149,7 @@ const getNewInteractionPos = (isThreeSixtyScene, cameraPos) => {
   }
 
   return center.map((pos) => spreadByValue(pos, spread))
-    .map((pos) => isThreeSixtyScene ? pos : `${pos  }%`)
+    .map((pos) => isThreeSixtyScene ? pos : `${pos}%`)
     .join(',');
 };
 
