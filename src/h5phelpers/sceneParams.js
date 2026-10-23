@@ -73,9 +73,9 @@ export const updateScene = (scenes, params, editingScene = -1) => {
  */
 export const setScenePositionFromCamera = (scenes, sceneId, camera) => {
   const scene = getSceneFromId(scenes, sceneId);
-  scene.cameraStartPosition = [
-    camera.yaw,
-    camera.pitch,
-  ].join(',');
+  scene.cameraStartPosition = {
+    yaw: `${camera.yaw}`,
+    pitch: `${camera.pitch}`,
+  };
 };
 

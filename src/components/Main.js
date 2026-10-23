@@ -315,7 +315,7 @@ export default class Main extends React.Component {
       camera,
     );
     this.setState({
-      currentCameraPosition: `${camera.yaw  },${  camera.pitch}`,
+      currentCameraPosition: { yaw: `${camera.yaw}`, pitch: `${camera.pitch}` },
     });
   };
 
@@ -396,7 +396,7 @@ export default class Main extends React.Component {
       else {
         // This is the camera
         this.setState({
-          currentCameraPosition: `${e.data.yaw  },${  e.data.pitch}`,
+          currentCameraPosition: { yaw: `${e.data.yaw}`, pitch: `${e.data.pitch}` },
         });
       }
     });
@@ -443,8 +443,10 @@ export default class Main extends React.Component {
     const hasScenes = this.context.params.scenes.length > 0;
     const scene = getSceneFromId(this.context.params.scenes, this.state.currentScene);
 
-    const isInStartingPosition = this.state.currentCameraPosition === null
-      || !scene || scene.cameraStartPosition === this.state.currentCameraPosition;
+    const isInStartingPosition = this.state.currentCameraPosition === null || !scene || (
+      scene.cameraStartPosition?.yaw === this.state.currentCameraPosition.yaw &&
+      scene.cameraStartPosition?.pitch === this.state.currentCameraPosition.pitch
+    );
 
     return (
       <div>

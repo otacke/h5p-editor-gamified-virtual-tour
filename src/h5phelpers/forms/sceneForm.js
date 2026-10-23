@@ -58,15 +58,15 @@ export const validateSceneForm = (children) => {
  * Set default values for scene parameters not initially set by user.
  * @param {object} params Parameter values of scene.
  * @param {boolean} isThreeSixty Whether scene is a 360 scene.
- * @param {string} cameraPos Camera position as comma separated yaw and pitch string (degrees).
+ * @param {object} cameraPos Camera position with yaw and pitch.
  */
 export const sanitizeSceneForm = (params, isThreeSixty, cameraPos) => {
   if (!params.cameraStartPosition) {
-    params.cameraStartPosition = [
+    params.cameraStartPosition = {
       // eslint-disable-next-line no-magic-numbers
-      -(Math.PI * (2 / 3)),
-      0,
-    ].join(',');
+      yaw: `${-(Math.PI * (2 / 3))}`,
+      pitch: '0',
+    };
   }
 
   if (!params.interactions) {
@@ -123,7 +123,7 @@ const isInteractionPositionValid = (interaction, isThreeSixty) => {
  * Set default position for interaction if it has invalid position for given scene type.
  * @param {object} interaction Interaction whose position may be corrected.
  * @param {boolean} isThreeSixty Whether scene is a 360 scene.
- * @param {string} cameraPos Camera position as comma separated yaw and pitch string (degrees).
+ * @param {object} cameraPos Camera position with yaw and pitch.
  */
 const sanitizeInteractionPositions = (interaction, isThreeSixty, cameraPos) => {
   if (!isInteractionPositionValid(interaction, isThreeSixty)) {
@@ -134,7 +134,7 @@ const sanitizeInteractionPositions = (interaction, isThreeSixty, cameraPos) => {
 /**
  * Get default interaction position given scene type.
  * @param {boolean} isThreeSixtyScene Whether position is for a 360 scene.
- * @param {string} cameraPos Camera position as comma separated yaw and pitch string (degrees).
+ * @param {object} cameraPos Camera position with yaw and pitch.
  * @returns {string} New position as comma separated values (degrees for 360 scenes, percentages otherwise).
  */
 const getNewInteractionPos = (isThreeSixtyScene, cameraPos) => {
@@ -143,7 +143,7 @@ const getNewInteractionPos = (isThreeSixtyScene, cameraPos) => {
   let spread = DefaultInteractionValues.static.spread;
 
   if (isThreeSixtyScene) {
-    center = cameraPos.split(',').map(parseFloat);
+    center = [cameraPos.yaw, cameraPos.pitch].map(parseFloat);
     // eslint-disable-next-line no-magic-numbers
     spread = DefaultInteractionValues.threeSixty.spread * Math.PI / 180;
   }
