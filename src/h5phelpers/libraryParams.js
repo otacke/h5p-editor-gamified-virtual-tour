@@ -10,10 +10,11 @@ export const Libraries = {
 /**
  * Get default parameters for library.
  * @param {string} uberName Uber name of library (e.g. H5P.GoToScene).
- * @returns {object} Default parameters for library (empty interactionPosition, action with library name).
+ * @returns {object} Default parameters for library (unique ID, empty interactionPosition, action with library name).
  */
 export const getDefaultLibraryParams = (uberName) => {
   return {
+    id: H5P.createUUID(),
     interactionPosition: { x: '', y: '' }, // Filled in on saving interaction
     action: {
       library: uberName,

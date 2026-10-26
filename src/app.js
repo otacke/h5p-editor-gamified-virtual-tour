@@ -22,6 +22,13 @@ H5PEditor.widgets.gamifiedVirtualTour = H5PEditor.GamifiedVirtualTour = class Ga
     this.parent = parent;
     this.field = field;
     this.setValue = setValue;
+
+    // Interactions created before IDs were introduced need one
+    this.params.scenes.forEach((scene) => {
+      (scene.interactions ?? []).forEach((interaction) => {
+        interaction.id = interaction.id || H5P.createUUID();
+      });
+    });
   }
 
   /**

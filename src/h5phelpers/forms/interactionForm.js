@@ -8,7 +8,7 @@ import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.j
  * @param {object} parent Parent widget.
  */
 export const createInteractionForm = (field, params, wrapper, parent) => {
-  const hiddenFormFields = ['interactionPosition'];
+  const hiddenFormFields = ['interactionPosition', 'id'];
 
   const interactionsField = getInteractionsField(field);
   const interactionFields = interactionsField.field.fields.filter((field) => {
