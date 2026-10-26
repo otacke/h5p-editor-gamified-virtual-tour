@@ -30,6 +30,7 @@
     "deleteInteractionText": "Resnično izbrišem to interakcijo?",
     "deleteSceneTitle": "Brisanje prizora",
     "deleteSceneText": "Resnično izbrišem ta prizor?",
-    "deleteSceneTextWithObjects": "Z izbrisom prizora bodo odstranjene tudi vse interakcije in interaktivne točke, ki so s prizorom povezane. Resnično izbrišem?"
+    "deleteSceneTextWithObjects": "Z izbrisom prizora bodo odstranjene tudi vse interakcije in interaktivne točke, ki so s prizorom povezane. Resnično izbrišem?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

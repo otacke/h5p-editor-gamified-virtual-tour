@@ -24,6 +24,17 @@ export const getDefaultLibraryParams = (uberName) => {
 };
 
 /**
+ * Get human readable label of interaction.
+ * @param {object} interaction Interaction parameters.
+ * @returns {string} Label text, title of content, or machine name of library.
+ */
+export const getInteractionLabel = (interaction) => {
+  return interaction.labelText ||
+    interaction.action?.metadata?.title ||
+    H5P.libraryFromString(interaction.action.library).machineName;
+};
+
+/**
  * Update position of interaction in parameters.
  * @param {Array} scenes Scenes in content.
  * @param {number} sceneId ID of scene containing interaction.

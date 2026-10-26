@@ -30,6 +30,7 @@
     "deleteInteractionText": "Tem certeza que deseja eliminar esta interação?",
     "deleteSceneTitle": "Apagar a cena",
     "deleteSceneText": "Tem certeza que deseja eliminar esta cena?",
-    "deleteSceneTextWithObjects": "A exclusão desta cena eliminará também todas as interacções dentro da cena e quaisquer pontos de acesso de navegação apontando para esta cena. Tem certeza que deseja eliminar esta cena?"
+    "deleteSceneTextWithObjects": "A exclusão desta cena eliminará também todas as interacções dentro da cena e quaisquer pontos de acesso de navegação apontando para esta cena. Tem certeza que deseja eliminar esta cena?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

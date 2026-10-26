@@ -30,6 +30,7 @@
     "deleteInteractionText": "Är du säker på att du vill radera denna interaktion?",
     "deleteSceneTitle": "Raderar scen",
     "deleteSceneText": "Är du säker på att du vill radera denna scen?",
-    "deleteSceneTextWithObjects": "Radering av denna scen innebär att alla interaktioner i scenen, och eventuella navigations-hotspots som pekar till denna scen, också raderas. Är du säker på att du vill radera denna scen?"
+    "deleteSceneTextWithObjects": "Radering av denna scen innebär att alla interaktioner i scenen, och eventuella navigations-hotspots som pekar till denna scen, också raderas. Är du säker på att du vill radera denna scen?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

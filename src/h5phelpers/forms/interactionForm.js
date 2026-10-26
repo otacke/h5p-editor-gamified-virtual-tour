@@ -6,14 +6,19 @@ import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.j
  * @param {object} params Interaction parameters.
  * @param {HTMLElement} wrapper DOM element to append form to.
  * @param {object} parent Parent widget.
+ * @param {object[]} [neighborOptions] Options with value and label for interactions that can be connected.
  */
-export const createInteractionForm = (field, params, wrapper, parent) => {
+export const createInteractionForm = (field, params, wrapper, parent, neighborOptions = []) => {
   const hiddenFormFields = ['interactionPosition', 'id'];
 
   const interactionsField = getInteractionsField(field);
   const interactionFields = interactionsField.field.fields.filter((field) => {
     return !hiddenFormFields.includes(field.name);
   });
+
+  // Neighbors widget renders options of semantics field
+  const neighborsField = interactionFields.find((field) => field.name === 'neighbors');
+  neighborsField.options = neighborOptions;
 
   H5PEditor.processSemanticsChunk(interactionFields, params, wrapper, parent);
 

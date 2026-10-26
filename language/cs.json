@@ -30,6 +30,7 @@
     "deleteInteractionText": "Opravdu chcete tuto interakci odstranit?",
     "deleteSceneTitle": "Odstranit scénu",
     "deleteSceneText": "Opravdu chcete tuto scénu odstranit?",
-    "deleteSceneTextWithObjects": "Odstraněním této scény odstraníte také všechny interakce ve scéně a jakékoli navigační body směřující na tuto scénu. Opravdu chcete tuto scénu smazat?"
+    "deleteSceneTextWithObjects": "Odstraněním této scény odstraníte také všechny interakce ve scéně a jakékoli navigační body směřující na tuto scénu. Opravdu chcete tuto scénu smazat?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

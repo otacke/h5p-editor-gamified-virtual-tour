@@ -30,6 +30,7 @@
     "done": "Pabeigt",
     "setCameraStart": "Iestatiet sākuma pozīciju",
     "changeSceneBody": "Mainot ainas veidu, visas mijiedarbības tiks nejauši pārvietotas. Vai tiešām vēlaties turpināt?",
-    "deleteSceneTextWithObjects": "Dzēšot šo ainu, tiks dzēstas arī visas mijiedarbības ainā un visi navigācijas aktīvie punkti, kas ved uz šo ainu. Vai tiešām vēlaties dzēst šo ainu?"
+    "deleteSceneTextWithObjects": "Dzēšot šo ainu, tiks dzēstas arī visas mijiedarbības ainā un visi navigācijas aktīvie punkti, kas ved uz šo ainu. Vai tiešām vēlaties dzēst šo ainu?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

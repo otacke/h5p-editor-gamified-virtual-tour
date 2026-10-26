@@ -1,0 +1,14 @@
+.h5p-editor-neighbors {
+  .h5p-editor-neighbors-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .h5p-editor-label {
+      align-items: center;
+      display: flex;
+      font-weight: normal;
+      gap: 0.5rem;
+    }
+  }
+}

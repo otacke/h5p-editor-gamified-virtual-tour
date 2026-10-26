@@ -30,6 +30,7 @@
     "deleteInteractionText": "Una uhakika unataka kufuta mwingiliano huu?",
     "deleteSceneTitle": "Inafuta tukio",
     "deleteSceneText": "Una uhakika unataka kufuta tukio hili?",
-    "deleteSceneTextWithObjects": "Kufuta tukio hili pia itafuta mwingiliano wote ndani ya tukio na maeneo yoyote maarufu yanayoelekezwa kwenye tukio hili. Una uhakika unataka kufuta tukio hili?"
+    "deleteSceneTextWithObjects": "Kufuta tukio hili pia itafuta mwingiliano wote ndani ya tukio na maeneo yoyote maarufu yanayoelekezwa kwenye tukio hili. Una uhakika unataka kufuta tukio hili?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

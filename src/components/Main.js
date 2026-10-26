@@ -11,6 +11,7 @@ import { deleteScene, getSceneFromId, setScenePositionFromCamera, updateScene } 
 import { isGoToScene, updatePosition } from '@h5phelpers/libraryParams.js';
 import { showConfirmationDialog } from '@h5phelpers/h5pComponents.js';
 import { addBehavioralListeners } from '@h5phelpers/editorForms.js';
+import { removeNeighbor, syncNeighbors, syncPaths } from '@h5phelpers/pathParams.js';
 
 /**
  * Render gamified virtual tour editor.
@@ -211,7 +212,9 @@ export default class Main extends React.Component {
 
     const scenes = this.context.params.scenes;
     const scene = getSceneFromId(scenes, this.state.currentScene);
-    scene.interactions.splice(editingInteraction, 1);
+    const [removedInteraction] = scene.interactions.splice(editingInteraction, 1);
+    removeNeighbor(scene, removedInteraction.id);
+    syncPaths(scene);
 
     this.setState({
       editingInteraction: SceneEditingType.NOT_EDITING,
@@ -247,6 +250,9 @@ export default class Main extends React.Component {
       scene.interactions.push(params);
       interactionIndex = scene.interactions.length - 1;
     }
+
+    syncNeighbors(scene, params);
+    syncPaths(scene);
     this.scenePreview.trigger('focusInteraction', [interactionIndex, isEditing]);
 
     this.setState({

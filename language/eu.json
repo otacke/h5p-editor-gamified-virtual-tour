@@ -30,6 +30,7 @@
     "deleteInteractionText": "Ziur zaude interakzio hau ezabatu nahi duzula?",
     "deleteSceneTitle": "Eszena ezabatzen",
     "deleteSceneText": "Ziur zaude eszena hau ezabatu nahi duzula?",
-    "deleteSceneTextWithObjects": "Eszena hau ezabatzeak bertako interakzio guztiak eta eszena honetara zuzendutako nabigazio-puntuak ere ezabatuko ditu. Ziur zaude eszena hau ezabatu nahi duzula?"
+    "deleteSceneTextWithObjects": "Eszena hau ezabatzeak bertako interakzio guztiak eta eszena honetara zuzendutako nabigazio-puntuak ere ezabatuko ditu. Ziur zaude eszena hau ezabatu nahi duzula?",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

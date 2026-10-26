@@ -30,6 +30,7 @@
     "selectASceneError": "فضلا اختر المشهد",
     "deleteInteractionTitle": "حذف التفاعل",
     "deleteSceneTitle": "حذف المشهد",
-    "deleteSceneTextWithObjects": "سيؤدي حذف هذا المشهد إلى حذف جميع التفاعلات داخل المشهد وأي نقاط مركزية فعالة تشير إلى هذا المشهد. هل أنت متأكد أنك ترغب بحذف هذا المشهد؟"
+    "deleteSceneTextWithObjects": "سيؤدي حذف هذا المشهد إلى حذف جميع التفاعلات داخل المشهد وأي نقاط مركزية فعالة تشير إلى هذا المشهد. هل أنت متأكد أنك ترغب بحذف هذا المشهد؟",
+    "noNeighbors": "There are no other interactions in this scene that could be connected."
   }
 }

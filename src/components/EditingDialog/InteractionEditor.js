@@ -4,7 +4,7 @@ import EditingDialog from '@components/EditingDialog/EditingDialog.js';
 import { H5PContext } from '@context/H5PContext.js';
 import '@components/EditingDialog/InteractionEditor.css';
 import { SceneTypes } from '@components/Scene/Scene.js';
-import { getDefaultLibraryParams, isGoToScene } from '@h5phelpers/libraryParams.js';
+import { getDefaultLibraryParams, getInteractionLabel, isGoToScene } from '@h5phelpers/libraryParams.js';
 import { getSceneFromId } from '@h5phelpers/sceneParams.js';
 import { getLibraryDataFromFields } from '@h5phelpers/editorForms.js';
 import {
@@ -79,6 +79,18 @@ export default class InteractionEditor extends React.Component {
   };
 
   /**
+   * Get other interactions of current scene as options for connecting.
+   * @returns {object[]} Options with interaction ID as value and interaction label as label.
+   */
+  getNeighborOptions = () => {
+    const scene = getSceneFromId(this.context.params.scenes, this.props.currentScene);
+
+    return (scene.interactions ?? [])
+      .filter((interaction) => interaction.id !== this.params.id)
+      .map((interaction) => ({ value: interaction.id, label: getInteractionLabel(interaction) }));
+  };
+
+  /**
    * React - run after initial render.
    */
   async componentDidMount() {
@@ -88,7 +100,8 @@ export default class InteractionEditor extends React.Component {
     // Preserve parent's children
     this.parentChildren = this.context.parent.children;
 
-    createInteractionForm(field, this.params, this.semanticsRef.current, this.context.parent);
+    const neighborOptions = this.getNeighborOptions();
+    createInteractionForm(field, this.params, this.semanticsRef.current, this.context.parent, neighborOptions);
 
     // Restore parent's children after preserving our own
     this.children = this.context.parent.children;
