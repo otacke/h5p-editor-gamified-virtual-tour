@@ -13,6 +13,7 @@ import { isGoToScene, updatePosition } from '@h5phelpers/libraryParams.js';
 import { showConfirmationDialog } from '@h5phelpers/h5pComponents.js';
 import { addBehavioralListeners } from '@h5phelpers/editorForms.js';
 import { disconnectInteractions, removeNeighbor, syncNeighbors, syncPaths } from '@h5phelpers/pathParams.js';
+import { removeRestrictionReferences } from '@h5phelpers/restrictionParams.js';
 
 /**
  * Render gamified virtual tour editor.
@@ -217,6 +218,7 @@ export default class Main extends React.Component {
     const [removedInteraction] = scene.interactions.splice(editingInteraction, 1);
     removeNeighbor(scene, removedInteraction.id);
     syncPaths(scene);
+    removeRestrictionReferences(scene, removedInteraction.id);
 
     this.setState({
       editingInteraction: SceneEditingType.NOT_EDITING,

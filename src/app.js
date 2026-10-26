@@ -3,8 +3,10 @@ import { createRoot } from 'react-dom/client';
 import Main from '@components/Main.js';
 import { H5PContext } from '@context/H5PContext.js';
 import NeighborsSelector from '@src/widgets/NeighborsSelector.js';
+import ShowWhen from '@src/widgets/ShowWhen/ShowWhen.js';
 
 H5PEditor.widgets.gamifiedVirtualTourNeighbors = NeighborsSelector;
+H5PEditor.widgets.gamifiedVirtualTourShowWhen = ShowWhen;
 
 /**
  * H5P content editor for gamified virtual tour.

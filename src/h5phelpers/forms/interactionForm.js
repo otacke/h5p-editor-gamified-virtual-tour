@@ -1,4 +1,27 @@
 import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.js';
+import { INTERACTION_RESTRICTION_TYPES } from '@h5phelpers/restrictionParams.js';
+
+/**
+ * Find semantics field by name in nested semantics.
+ * @param {object[]} fields Semantics fields to search in.
+ * @param {string} name Name of field.
+ * @returns {object|undefined} Semantics field, undefined if not found.
+ */
+const findNestedField = (fields, name) => {
+  for (const field of fields) {
+    if (field.name === name) {
+      return field;
+    }
+
+    const children = field.fields ?? (field.field ? [field.field] : []);
+    const found = findNestedField(children, name);
+    if (found) {
+      return found;
+    }
+  }
+
+  return undefined;
+};
 
 /**
  * Create interaction form and append it to wrapper.
@@ -7,8 +30,11 @@ import { getInteractionsField, isChildrenValid } from '@h5phelpers/editorForms.j
  * @param {HTMLElement} wrapper DOM element to append form to.
  * @param {object} parent Parent widget.
  * @param {object[]} [neighborOptions] Options with value and label for interactions that can be connected.
+ * @param {object[]} [restrictionOptions] Options with value and label for interactions restrictions can refer to.
  */
-export const createInteractionForm = (field, params, wrapper, parent, neighborOptions = []) => {
+export const createInteractionForm = (
+  field, params, wrapper, parent, neighborOptions = [], restrictionOptions = [],
+) => {
   const hiddenFormFields = ['interactionPosition', 'id'];
 
   const interactionsField = getInteractionsField(field);
@@ -19,6 +45,11 @@ export const createInteractionForm = (field, params, wrapper, parent, neighborOp
   // Neighbors widget renders options of semantics field
   const neighborsField = interactionFields.find((field) => field.name === 'neighbors');
   neighborsField.options = neighborOptions;
+
+  // Select widgets render options of semantics fields, also for restrictions that are added later
+  INTERACTION_RESTRICTION_TYPES.forEach((type) => {
+    findNestedField(interactionFields, `${type}Id`).options = restrictionOptions;
+  });
 
   H5PEditor.processSemanticsChunk(interactionFields, params, wrapper, parent);
 

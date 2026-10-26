@@ -91,6 +91,18 @@ export default class InteractionEditor extends React.Component {
   };
 
   /**
+   * Get other interactions of current scene that restrictions can refer to, excluding navigation buttons.
+   * @returns {object[]} Options with interaction ID as value and interaction label as label.
+   */
+  getRestrictionOptions = () => {
+    const scene = getSceneFromId(this.context.params.scenes, this.props.currentScene);
+
+    return (scene.interactions ?? [])
+      .filter((interaction) => interaction.id !== this.params.id && !isGoToScene(interaction))
+      .map((interaction) => ({ value: interaction.id, label: getInteractionLabel(interaction) }));
+  };
+
+  /**
    * React - run after initial render.
    */
   async componentDidMount() {
@@ -100,8 +112,14 @@ export default class InteractionEditor extends React.Component {
     // Preserve parent's children
     this.parentChildren = this.context.parent.children;
 
-    const neighborOptions = this.getNeighborOptions();
-    createInteractionForm(field, this.params, this.semanticsRef.current, this.context.parent, neighborOptions);
+    createInteractionForm(
+      field,
+      this.params,
+      this.semanticsRef.current,
+      this.context.parent,
+      this.getNeighborOptions(),
+      this.getRestrictionOptions(),
+    );
 
     // Restore parent's children after preserving our own
     this.children = this.context.parent.children;
