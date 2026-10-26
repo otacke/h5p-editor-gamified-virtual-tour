@@ -18,6 +18,18 @@ const DefaultInteractionValues = {
 };
 
 /**
+ * Check if overview map is active and has an image.
+ * @param {object[]} formChildren Children widgets of editor form.
+ * @returns {boolean} True if scenes can be positioned on overview map.
+ */
+const hasOverviewMap = (formChildren) => {
+  const behaviour = formChildren.find((child) => child.field?.name === 'behaviour');
+  const overviewMap = behaviour?.params?.overviewMap;
+
+  return overviewMap?.show === true && !!overviewMap.image?.path;
+};
+
+/**
  * Create scene form and append it to wrapper.
  * @param {object} field H5P semantics field for scene.
  * @param {object} params Parameter values of scene.
@@ -25,14 +37,39 @@ const DefaultInteractionValues = {
  * @param {object} parent Parent editor data object passed to processSemanticsChunk.
  */
 export const createSceneForm = (field, params, wrapper, parent) => {
+  // Will be reset by processSemanticsChunk, but required for finding overview map image
+  const formChildren = parent.children;
+
   const sceneField = getSceneField(field);
-  const hiddenSceneFields = ['sceneId', 'cameraStartPosition', 'interactions', 'paths'];
+  const hiddenSceneFields = ['sceneId', 'cameraStartPosition', 'interactions', 'paths', 'overviewMapPosition'];
 
   const sceneFields = sceneField.field.fields.filter((sceneField) => {
     return !hiddenSceneFields.includes(sceneField.name);
   });
 
   H5PEditor.processSemanticsChunk(sceneFields, params, wrapper, parent);
+
+  if (!hasOverviewMap(formChildren)) {
+    return;
+  }
+
+  /*
+   * The coordinate selector looks up the overview map image while being created, but processSemanticsChunk
+   * empties the children of the form meanwhile. Using a separate parent next to the form children
+   * lets the image field path `../behaviour/overviewMap/image` resolve.
+   */
+  const positionParent = {
+    parent: { children: formChildren },
+    passReadies: false,
+    children: [],
+    ready(callback) {
+      this.readies.push(callback);
+    },
+  };
+
+  const positionField = sceneField.field.fields.find((sceneField) => sceneField.name === 'overviewMapPosition');
+  H5PEditor.processSemanticsChunk([positionField], params, wrapper, positionParent);
+  parent.children.push(...positionParent.children);
 };
 
 /**
