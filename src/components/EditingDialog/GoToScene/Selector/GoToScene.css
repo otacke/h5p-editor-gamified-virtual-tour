@@ -1,20 +1,20 @@
 .go-to-scene {
-  margin-top: 2rem;
+  margin-top: var(--h5p-theme-spacing-l);
 
   .error-message {
     color: darkred;
     display: none;
-    padding: 0.5rem 0;
+    padding: var(--h5p-theme-spacing-xxs) 0;
   }
 
   .go-to-scene-selector-wrapper .selector-separator {
     font-weight: bold;
-    padding: 1.25rem 0;
+    padding: calc(1.25 * var(--h5p-theme-spacing-s)) 0;
   }
 
   .create-new-scene-wrapper .new-scene-title {
     font-weight: bold;
-    margin-bottom: 0.75rem;
+    margin-bottom: calc(0.75 * var(--h5p-theme-spacing-s));
   }
 
   &.has-error .error-message {

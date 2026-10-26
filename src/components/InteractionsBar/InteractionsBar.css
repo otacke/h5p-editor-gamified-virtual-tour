@@ -6,8 +6,8 @@
   border-top: 1px solid #d1d1d1;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  padding: 0.5rem;
+  gap: calc(0.25 * var(--h5p-theme-spacing-s));
+  padding: var(--h5p-theme-spacing-xxs);
 
   & button {
     background: #f2f2f2;
@@ -15,16 +15,16 @@
     background: -moz-linear-gradient(top, #fff 0, #f2f2f2 100%);
     background: -o-linear-gradient(top, #fff 0, #f2f2f2 100%);
     border: 1px solid #ccc;
-    border-radius: 0.3rem;
+    border-radius: calc(0.3 * var(--h5p-theme-spacing-s));
     box-sizing: content-box;
     color: #333;
     cursor: pointer;
-    font-size: 1.2rem;
-    height: 1.32rem;
-    padding: 0.3rem 0.78rem;
+    font-size: calc(1.2 * var(--h5p-theme-font-size-m));
+    height: calc(1.32 * var(--h5p-theme-spacing-s));
+    padding: calc(0.3 * var(--h5p-theme-spacing-s)) calc(0.78 * var(--h5p-theme-spacing-s));
     position: relative;
     vertical-align: top;
-    width: 1.2rem;
+    width: calc(1.2 * var(--h5p-theme-spacing-s));
 
     .tooltip {
       background: black;
@@ -32,9 +32,9 @@
       bottom: -2px;
       color: white;
       display: none;
-      font-size: 0.96rem;
+      font-size: calc(0.96 * var(--h5p-theme-font-size-m));
       left: 0;
-      padding: 0.192rem 0.48rem;
+      padding: calc(0.192 * var(--h5p-theme-spacing-s)) calc(0.48 * var(--h5p-theme-spacing-s));
       position: absolute;
       transform: translateY(100%);
       white-space: nowrap;
@@ -64,7 +64,7 @@
     &.h5p-gotoscene:before {
       content: var(--icon-go-to-scene);
       font-family: "360-image", sans-serif;
-      font-size: 0.96rem;
+      font-size: calc(0.96 * var(--h5p-theme-font-size-m));
     }
 
     &.h5p-advancedtext:before {
@@ -88,9 +88,9 @@
     &.h5p-summary:before {
       content: var(--icon-summary);
       font-family: "H5PFontIcons", sans-serif;
-      font-size: 1.74rem;
+      font-size: calc(1.74 * var(--h5p-theme-font-size-m));
       position: absolute;
-      top: 0.8004rem;
+      top: calc(0.8004 * var(--h5p-theme-spacing-s));
       transform: translate(-50%, -50%);
     }
 

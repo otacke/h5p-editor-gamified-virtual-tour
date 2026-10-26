@@ -4,22 +4,22 @@
   border: 1px solid #e0dede;
   border-bottom-width: 0;
   display: flex;
-  padding: 0.625rem;
+  padding: calc(0.625 * var(--h5p-theme-spacing-s));
 
   .thumbnail-wrapper {
     display: flex;
-    height: 2.1rem;
+    height: calc(2.1 * var(--h5p-theme-spacing-s));
     position: relative;
-    width: 2.7rem;
+    width: calc(2.7 * var(--h5p-theme-spacing-s));
 
     &:before {
       background: white;
       content: var(--icon-static-scene);
       font-family: "360-image", sans-serif;
-      font-size: 0.9rem;
-      left: 0.18rem;
+      font-size: calc(0.9 * var(--h5p-theme-font-size-m));
+      left: calc(0.18 * var(--h5p-theme-spacing-s));
       position: absolute;
-      top: 0.09rem;
+      top: calc(0.09 * var(--h5p-theme-spacing-s));
       transform: translate(-50%,-50%);
     }
 
@@ -42,13 +42,13 @@
     box-sizing: border-box;
     display: inline-block;
     flex: 1;
-    margin: 0 0.75rem;
+    margin: 0 calc(0.75 * var(--h5p-theme-spacing-s));
     overflow: hidden;
     vertical-align: top;
 
     .h5p-scene-name {
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: calc(0.9 * var(--h5p-theme-font-size-m));
       font-weight: bold;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -56,7 +56,7 @@
     }
 
     .starting-scene {
-      font-size: 0.7rem;
+      font-size: calc(0.7 * var(--h5p-theme-font-size-m));
       font-style: italic;
     }
   }
@@ -104,7 +104,7 @@
     color: #2c611a;
     content: "\f00c";
     font-family: "H5PFontAwesome4", sans-serif;
-    font-size: 1.5rem;
-    margin-right: 0.75rem;
+    font-size: var(--h5p-theme-font-size-xxl);
+    margin-right: calc(0.75 * var(--h5p-theme-spacing-s));
   }
 }

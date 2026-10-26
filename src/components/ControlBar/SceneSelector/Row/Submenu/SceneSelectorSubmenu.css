@@ -7,18 +7,18 @@
     background: white;
     border: 1px solid #f0f0f0;
     cursor: pointer;
-    height: 2.5rem;
-    margin-left: 0.5rem;
-    padding: 0.5rem;
+    height: calc(2.5 * var(--h5p-theme-spacing-s));
+    margin-left: var(--h5p-theme-spacing-xxs);
+    padding: var(--h5p-theme-spacing-xxs);
     position: relative;
-    width: 2.5rem;
+    width: calc(2.5 * var(--h5p-theme-spacing-s));
 
     .tooltip {
       background: #000;
       color: #fff;
       display: none;
       left: 50%;
-      padding: 0.4rem 0.6rem;
+      padding: calc(0.4 * var(--h5p-theme-spacing-s)) calc(0.6 * var(--h5p-theme-spacing-s));
       pointer-events: none;
       position: absolute;
       top: -1px;

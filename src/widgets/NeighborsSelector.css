@@ -8,7 +8,7 @@
       align-items: center;
       display: flex;
       font-weight: normal;
-      gap: 0.5rem;
+      gap: var(--h5p-theme-spacing-xxs);
     }
   }
 }

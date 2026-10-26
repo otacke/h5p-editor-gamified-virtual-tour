@@ -1,16 +1,16 @@
 @import '@styles/icons.css';
 
 .scene-selector-wrapper {
-  margin-right: 0.5rem;
+  margin-right: var(--h5p-theme-spacing-xxs);
   position: relative;
-  width: 30rem;
+  width: calc(30 * var(--h5p-theme-spacing-s));
 
   .h5p-scene-selector {
     border: 1px solid #d1d1d1;
     cursor: pointer;
     display: inline-flex;
-    font-size: 1rem;
-    width: 30rem;
+    font-size: var(--h5p-theme-font-size-m);
+    width: calc(30 * var(--h5p-theme-spacing-s));
 
     &:hover {
       background: #f0f2ff;
@@ -31,7 +31,7 @@
 
     .h5p-select-handle {
       background: #e6e6e8;
-      padding: 0.5rem 0.75rem;
+      padding: var(--h5p-theme-spacing-xxs) calc(0.75 * var(--h5p-theme-spacing-s));
 
       &:before {
         content: var(--icon-dropdown);
@@ -57,7 +57,7 @@
       }
 
       .h5p-select-content {
-        padding: 0.6rem;
+        padding: calc(0.6 * var(--h5p-theme-spacing-s));
       }
     }
   }

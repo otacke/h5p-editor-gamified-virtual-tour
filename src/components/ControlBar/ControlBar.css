@@ -5,13 +5,13 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: var(--h5p-theme-font-size-m);
+  padding: var(--h5p-theme-spacing-xxs) var(--h5p-theme-spacing-s);
 }
 
 .h5p-control-bar {
   display: flex;
-  margin-top: 0.75rem;
+  margin-top: calc(0.75 * var(--h5p-theme-spacing-s));
 
   .buttons-wrapper {
     display: flex;
@@ -30,12 +30,12 @@
 
       .set-starting-position-button {
         background: #000;
-        border: 0.109375rem solid transparent;
+        border: calc(0.109375 * var(--h5p-theme-spacing-s)) solid transparent;
         color: #fff;
         cursor: pointer;
-        font-size: 0.875rem;
+        font-size: calc(0.875 * var(--h5p-theme-font-size-m));
         opacity: 0.8;
-        padding: 0.4375rem 0.875rem;
+        padding: calc(0.4375 * var(--h5p-theme-spacing-s)) calc(0.875 * var(--h5p-theme-spacing-s));
         transition: border-color 100ms, opacity 100ms;
 
         &:hover,
@@ -58,13 +58,13 @@
         bottom: 200%;
         box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px;
         color: #fff;
-        font-size: 0.875rem;
+        font-size: calc(0.875 * var(--h5p-theme-font-size-m));
         line-height: 1.75;
         opacity: 0;
-        padding: 0.21875rem 0.875rem;
+        padding: calc(0.21875 * var(--h5p-theme-spacing-s)) calc(0.875 * var(--h5p-theme-spacing-s));
         pointer-events: none;
         position: absolute;
-        right: -0.4375rem;
+        right: calc(-0.4375 * var(--h5p-theme-spacing-s));
         transition: visibility 0s linear 0.1s, opacity 0.1s linear, bottom 0.1s linear;
         visibility: hidden;
         z-index: 11;
@@ -74,16 +74,16 @@
           box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px;
           content: " ";
           display: block;
-          height: 0.65625rem;
+          height: calc(0.65625 * var(--h5p-theme-spacing-s));
           position: absolute;
           right: 0;
           top: 100%;
           transform: translateX(-700%) translateY(-50%) rotate(45deg);
-          width: 0.65625rem;
+          width: calc(0.65625 * var(--h5p-theme-spacing-s));
         }
 
         .text-wrapper {
-          max-width: 26.25rem;
+          max-width: calc(26.25 * var(--h5p-theme-spacing-s));
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -103,7 +103,7 @@
     display: block;
 
     .buttons-wrapper {
-      margin-top: 0.75rem;
+      margin-top: calc(0.75 * var(--h5p-theme-spacing-s));
     }
   }
 }

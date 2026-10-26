@@ -12,32 +12,32 @@
     display: flex;
     flex-direction: column;
     left: 50%;
-    max-height: calc(100% - 6rem);
+    max-height: calc(100% - calc(6 * var(--h5p-theme-spacing-s)));
     max-width: 918px;
     position: absolute;
-    top: 4rem;
+    top: calc(4 * var(--h5p-theme-spacing-s));
     transform: translateX(-50%);
-    width: calc(100% - 3rem);
+    width: calc(100% - var(--h5p-theme-spacing-xl));
 
     .h5peditor-semi-fullscreen & {
-      max-height: calc(100% - 3rem);
-      top: 1.5rem;
+      max-height: calc(100% - var(--h5p-theme-spacing-xl));
+      top: var(--h5p-theme-spacing-m);
     }
 
     .h5p-editing-dialog-header {
       border-bottom: 1px solid #e3e3e3;
       display: flex;
       flex-shrink: 0;
-      padding: 0.75rem 0.75rem 0.75rem 1.75rem;
+      padding: calc(0.75 * var(--h5p-theme-spacing-s)) calc(0.75 * var(--h5p-theme-spacing-s)) calc(0.75 * var(--h5p-theme-spacing-s)) calc(1.75 * var(--h5p-theme-spacing-s));
 
       .title {
         align-self: center;
         flex: 1;
-        font-size: 1.125rem;
+        font-size: var(--h5p-theme-font-size-l);
 
         &:before {
-          font-size: 1.40625rem;
-          margin-right: 1.0546875rem;
+          font-size: calc(1.40625 * var(--h5p-theme-font-size-m));
+          margin-right: calc(1.0546875 * var(--h5p-theme-spacing-s));
           vertical-align: text-bottom;
         }
       }
@@ -47,11 +47,11 @@
           background: none;
           border: none;
           cursor: pointer;
-          font-size: 0.875rem;
-          padding: 0.65625rem 1.75rem;
+          font-size: calc(0.875 * var(--h5p-theme-font-size-m));
+          padding: calc(0.65625 * var(--h5p-theme-spacing-s)) calc(1.75 * var(--h5p-theme-spacing-s));
 
           &:not(:first-of-type) {
-            margin-left: 0.4375rem;
+            margin-left: calc(0.4375 * var(--h5p-theme-spacing-s));
           }
         }
 
@@ -82,7 +82,7 @@
 
     .h5p-editing-dialog-body {
       overflow: auto;
-      padding: 1.75rem;
+      padding: calc(1.75 * var(--h5p-theme-spacing-s));
     }
   }
 }

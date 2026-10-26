@@ -3,7 +3,7 @@
   border-bottom: none;
   box-sizing: border-box;
   cursor: default;
-  max-height: 33.5rem;
+  max-height: calc(33.5 * var(--h5p-theme-spacing-s));
   overflow-x: hidden;
   overflow-y: auto;
   position: absolute;
@@ -15,10 +15,10 @@
   .header {
     border: 1px solid #d1d1d1;
     border-bottom: none;
-    padding: 0.75rem;
+    padding: calc(0.75 * var(--h5p-theme-spacing-s));
 
     .title {
-      font-size: 1.125rem;
+      font-size: var(--h5p-theme-font-size-l);
       font-weight: bold;
     }
   }
