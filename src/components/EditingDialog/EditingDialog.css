@@ -8,7 +8,7 @@
   z-index: 2;
 
   .h5p-editing-dialog {
-    background: white;
+    background: var(--h5p-theme-ui-base);
     display: flex;
     flex-direction: column;
     left: 50%;
@@ -56,25 +56,31 @@
         }
 
         .remove-button {
-          color: #a00;
+          color: var(--h5p-theme-feedback-incorrect-main);
 
           &:hover {
-            color: #e40000;
+            background: var(--h5p-theme-feedback-incorrect-secondary);
+          }
+
+          &:active {
+            background: var(--h5p-theme-feedback-incorrect-third);
           }
         }
 
+        /* Color scheme of .h5p-theme-primary-cta from H5P.Components */
         .done-button {
-          background: -webkit-linear-gradient(top,#5A94D3 0,#3673B5 100%);
-          background: -moz-linear-gradient(top,#5A94D3 0,#3673B5 100%);
-          background: -o-linear-gradient(top,#5A94D3 0,#3673B5 100%);
-          border-color: #20588F;
-          color: #fff;
+          background: var(--h5p-theme-main-cta-base);
+          border-color: var(--h5p-theme-main-cta-base);
+          color: var(--h5p-theme-contrast-cta);
 
           &:hover {
-            background: #3275bc;
-            background: -webkit-linear-gradient(top,#3275bc 0,#285585 100%);
-            background: -moz-linear-gradient(top,#3275bc 0,#285585 100%);
-            background: -o-linear-gradient(top,#3275bc 0,#285585 100%);
+            background: var(--h5p-theme-main-cta-light);
+            border-color: var(--h5p-theme-main-cta-light);
+          }
+
+          &:active {
+            background: var(--h5p-theme-main-cta-dark);
+            border-color: var(--h5p-theme-main-cta-dark);
           }
         }
       }

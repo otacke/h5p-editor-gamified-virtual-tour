@@ -4,7 +4,7 @@
   display: inline-block;
 
   & button {
-    background: white;
+    background: var(--h5p-theme-ui-base);
     border: 1px solid #f0f0f0;
     cursor: pointer;
     height: calc(2.5 * var(--h5p-theme-spacing-s));
@@ -47,25 +47,6 @@
     content: var(--icon-edit);
   }
 
-  .delete {
-    border-color: #fcdbd4;
-
-    &:before {
-      color: #d63129;
-      content: var(--icon-delete);
-    }
-
-    &:hover {
-      background-color: #fcdbd4;
-      border-color: #f2c1b1;
-    }
-
-    &:active {
-      background-color: #f2c1b1;
-      border-color: #e39e98;
-    }
-  }
-
   & button:not(:disabled) {
     &:hover {
       background-color: #e0dede;
@@ -79,6 +60,26 @@
     &:active {
       background-color: #e8e8e8;
       border-color: #e0e0e0;
+    }
+  }
+
+  /* Same specificity as generic button states, so it needs to come after them */
+  & button.delete {
+    border-color: var(--h5p-theme-feedback-incorrect-third);
+
+    &:before {
+      color: var(--h5p-theme-feedback-incorrect-main);
+      content: var(--icon-delete);
+    }
+
+    &:not(:disabled):hover {
+      background-color: var(--h5p-theme-feedback-incorrect-secondary);
+      border-color: var(--h5p-theme-feedback-incorrect-third);
+    }
+
+    &:not(:disabled):active {
+      background-color: var(--h5p-theme-feedback-incorrect-third);
+      border-color: var(--h5p-theme-feedback-incorrect-main);
     }
   }
 }

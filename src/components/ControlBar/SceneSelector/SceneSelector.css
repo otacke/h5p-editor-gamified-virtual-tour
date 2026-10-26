@@ -47,12 +47,12 @@
       user-select: none;
 
       &:hover {
-        background: white;
+        background: var(--h5p-theme-ui-base);
         border-color: #d1d1d1;
       }
 
       &:active {
-        background: white;
+        background: var(--h5p-theme-ui-base);
         border-color: #d1d1d1;
       }
 

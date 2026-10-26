@@ -1,12 +1,40 @@
+/* Style of .h5p-theme-button.h5p-theme-primary-cta from H5P.Components */
 .h5p-new-scene-button {
-  background: #475ec4;
-  border: 1px solid #475ec4;
-  border-radius: 3px;
-  color: #ffffff;
+  align-items: center;
+  background-color: var(--h5p-theme-main-cta-base);
+  border: 3px solid var(--h5p-theme-main-cta-base);
+  border-radius: var(--h5p-theme-border-radius-medium);
+  color: var(--h5p-theme-contrast-cta);
   cursor: pointer;
   display: inline-flex;
   font-size: var(--h5p-theme-font-size-m);
-  padding: var(--h5p-theme-spacing-xxs) var(--h5p-theme-spacing-s);
+  font-weight: 600;
+  height: fit-content;
+  line-height: 1;
+  min-width: max-content;
+  padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-l);
+  transition: background-color 0.1s linear, border-color 0.1s linear;
+
+  &:hover:not(:disabled) {
+    background-color: var(--h5p-theme-main-cta-light);
+    border-color: var(--h5p-theme-main-cta-light);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--h5p-theme-main-cta-dark);
+    border-color: var(--h5p-theme-main-cta-dark);
+  }
+
+  &:focus-visible {
+    border-radius: 4px;
+    outline: 2px ridge var(--h5p-theme-contrast-cta-white);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.4;
+  }
 }
 
 .h5p-control-bar {
@@ -19,19 +47,16 @@
     justify-content: space-between;
     position: relative;
 
-    .h5p-new-scene-button {
-      line-height: 1.6;
-    }
-
     .button-wrapper {
       display: inline-flex;
       position: absolute;
       right: 0;
 
+      /* Button and tooltip use tooltip style from view (color scheme of HUD buttons) */
       .set-starting-position-button {
-        background: #000;
+        background: var(--h5p-theme-secondary-cta-base);
         border: calc(0.109375 * var(--h5p-theme-spacing-s)) solid transparent;
-        color: #fff;
+        color: var(--h5p-theme-secondary-contrast-cta);
         cursor: pointer;
         font-size: calc(0.875 * var(--h5p-theme-font-size-m));
         opacity: 0.8;
@@ -44,7 +69,7 @@
         }
 
         &:active {
-          border-color: #808080;
+          border-color: var(--h5p-theme-secondary-cta-dark);
         }
 
         &[disabled] {
@@ -54,10 +79,10 @@
       }
 
       .tooltip {
-        background: #000;
+        background: var(--h5p-theme-secondary-cta-base);
         bottom: 200%;
         box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px;
-        color: #fff;
+        color: var(--h5p-theme-secondary-contrast-cta);
         font-size: calc(0.875 * var(--h5p-theme-font-size-m));
         line-height: 1.75;
         opacity: 0;
@@ -70,7 +95,7 @@
         z-index: 11;
 
         &:after {
-          background: #000;
+          background: var(--h5p-theme-secondary-cta-base);
           box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px;
           content: " ";
           display: block;

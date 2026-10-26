@@ -1,5 +1,5 @@
 .expanded-scene-selector {
-  background: white;
+  background: var(--h5p-theme-ui-base);
   border-bottom: none;
   box-sizing: border-box;
   cursor: default;

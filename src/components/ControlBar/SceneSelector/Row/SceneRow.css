@@ -13,7 +13,7 @@
     width: calc(2.7 * var(--h5p-theme-spacing-s));
 
     &:before {
-      background: white;
+      background: var(--h5p-theme-ui-base);
       content: var(--icon-static-scene);
       font-family: "360-image", sans-serif;
       font-size: calc(0.9 * var(--h5p-theme-font-size-m));
@@ -61,14 +61,15 @@
     }
   }
 
+  /* Hide without removing from layout, so row height doesn't change on hover */
   .scene-selector-submenu {
-    display: none;
+    visibility: hidden;
   }
 
   &.marked-scene {
-    background-color: #ddf0dd;
+    background-color: var(--h5p-theme-feedback-correct-secondary);
     border-bottom-width: 1px;
-    border-color: #72c967;
+    border-color: var(--h5p-theme-feedback-correct-third);
   }
 
   &.no-top-border {
@@ -81,7 +82,7 @@
     cursor: pointer;
 
     .scene-selector-submenu {
-      display: block;
+      visibility: visible;
     }
 
     .scene-wrapper .h5p-scene-name {
@@ -95,13 +96,13 @@
   }
 
   &.marked-scene:hover {
-    background-color: #bacdba;
-    border-color: #5baa55;
+    background-color: var(--h5p-theme-feedback-correct-third);
+    border-color: var(--h5p-theme-feedback-correct-main);
   }
 
   &.marked-scene.checked:after {
     align-self: center;
-    color: #2c611a;
+    color: var(--h5p-theme-feedback-correct-main);
     content: "\f00c";
     font-family: "H5PFontAwesome4", sans-serif;
     font-size: var(--h5p-theme-font-size-xxl);
