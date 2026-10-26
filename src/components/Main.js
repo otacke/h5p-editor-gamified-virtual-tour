@@ -6,12 +6,13 @@ import SceneEditor, { SceneEditingType } from '@components/EditingDialog/SceneEd
 import InteractionsBar from '@components/InteractionsBar/InteractionsBar.js';
 import '@components/Main.css';
 import InteractionEditor, { InteractionEditingType } from '@components/EditingDialog/InteractionEditor.js';
+import PathEditor from '@components/EditingDialog/PathEditor.js';
 import { H5PContext } from '@context/H5PContext.js';
 import { deleteScene, getSceneFromId, setScenePositionFromCamera, updateScene } from '@h5phelpers/sceneParams.js';
 import { isGoToScene, updatePosition } from '@h5phelpers/libraryParams.js';
 import { showConfirmationDialog } from '@h5phelpers/h5pComponents.js';
 import { addBehavioralListeners } from '@h5phelpers/editorForms.js';
-import { removeNeighbor, syncNeighbors, syncPaths } from '@h5phelpers/pathParams.js';
+import { disconnectInteractions, removeNeighbor, syncNeighbors, syncPaths } from '@h5phelpers/pathParams.js';
 
 /**
  * Render gamified virtual tour editor.
@@ -30,6 +31,7 @@ export default class Main extends React.Component {
       editingScene: SceneEditingType.NOT_EDITING,
       editingLibrary: null,
       editingInteraction: InteractionEditingType.NOT_EDITING,
+      editingPath: null,
       currentScene: this.props.initialScene,
       startScene: this.props.initialScene,
       isSceneUpdated: false,
@@ -368,6 +370,13 @@ export default class Main extends React.Component {
       });
     });
 
+    this.scenePreview.off('editPath');
+    this.scenePreview.on('editPath', (e) => {
+      this.setState({
+        editingPath: e.data,
+      });
+    });
+
     this.scenePreview.off('deleteInteraction');
     this.scenePreview.on('deleteInteraction', (e) => {
       this.removeInteraction(e.data);
@@ -398,6 +407,38 @@ export default class Main extends React.Component {
         currentScene: e.data,
       });
     });
+  };
+
+  /**
+   * Close path editor and update preview with new path settings.
+   */
+  doneEditingPath = () => {
+    this.setState({
+      editingPath: null,
+      isSceneUpdated: false,
+    });
+  };
+
+  /**
+   * Show confirmation for removing path that is being edited.
+   */
+  removePath = () => {
+    showConfirmationDialog({
+      headerText: this.context.t('deletePathTitle'),
+      dialogText: this.context.t('deletePathText'),
+      cancelText: this.context.t('cancel'),
+      confirmText: this.context.t('confirm'),
+    }, this.confirmRemovePath);
+  };
+
+  /**
+   * Disconnect interactions of path that is being edited.
+   */
+  confirmRemovePath = () => {
+    const scene = getSceneFromId(this.context.params.scenes, this.state.currentScene);
+    disconnectInteractions(scene, this.state.editingPath.from, this.state.editingPath.to);
+
+    this.doneEditingPath();
   };
 
   /**
@@ -474,6 +515,15 @@ export default class Main extends React.Component {
             removeAction={() => this.deleteScene(this.state.editingScene)}
             doneAction={this.doneEditingScene}
             editingScene={this.state.editingScene}
+          />
+        }
+        {
+          this.state.editingPath !== null &&
+          <PathEditor
+            currentScene={this.state.currentScene}
+            editingPath={this.state.editingPath}
+            doneAction={this.doneEditingPath}
+            removeAction={this.removePath}
           />
         }
         {

@@ -31,6 +31,9 @@
     "deleteSceneTitle": "Eliminando escena",
     "deleteSceneText": "¿Seguro que quieres eliminar esta escena?",
     "deleteSceneTextWithObjects": "Al eliminar esta escena también se eliminarán todas las interacciones dentro de la escena y cualquier punto de navegación que apunte a esta escena. ¿Seguro que quieres eliminar esta escena?",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }

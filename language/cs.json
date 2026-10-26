@@ -31,6 +31,9 @@
     "deleteSceneTitle": "Odstranit scénu",
     "deleteSceneText": "Opravdu chcete tuto scénu odstranit?",
     "deleteSceneTextWithObjects": "Odstraněním této scény odstraníte také všechny interakce ve scéně a jakékoli navigační body směřující na tuto scénu. Opravdu chcete tuto scénu smazat?",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }

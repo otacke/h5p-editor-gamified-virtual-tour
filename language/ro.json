@@ -31,6 +31,9 @@
     "deleteSceneTitle": "Ștergere scenă",
     "deleteSceneText": "Sunteți sigur că doriți să ștergeți această scenă?",
     "deleteSceneTextWithObjects": "Ștergerea acestei scene va șterge și toate interacțiunile din cadrul scenei, precum și orice punct activ de navigare care indică spre această scenă. Sunteți sigur că doriți să ștergeți această scenă?",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }

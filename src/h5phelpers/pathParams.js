@@ -35,6 +35,35 @@ export const removeNeighbor = (scene, interactionId) => {
 };
 
 /**
+ * Get path between two interactions, independent of direction.
+ * @param {object} scene Scene containing path.
+ * @param {string} from ID of one interaction.
+ * @param {string} to ID of other interaction.
+ * @returns {object|undefined} Path parameters, undefined if interactions are not connected.
+ */
+export const getPath = (scene, from, to) => {
+  return (scene.paths ?? []).find((path) => {
+    return (path.from === from && path.to === to) || (path.from === to && path.to === from);
+  });
+};
+
+/**
+ * Remove connection between two interactions and its path.
+ * @param {object} scene Scene containing interactions.
+ * @param {string} from ID of one interaction.
+ * @param {string} to ID of other interaction.
+ */
+export const disconnectInteractions = (scene, from, to) => {
+  (scene.interactions ?? []).forEach((interaction) => {
+    if (interaction.id === from || interaction.id === to) {
+      interaction.neighbors = (interaction.neighbors ?? []).filter((id) => id !== from && id !== to);
+    }
+  });
+
+  syncPaths(scene);
+};
+
+/**
  * Create path entries for all connections in scene and drop obsolete ones, keeping custom visuals.
  * @param {object} scene Scene to update paths for.
  */

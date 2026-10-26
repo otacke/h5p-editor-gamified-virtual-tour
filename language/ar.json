@@ -31,6 +31,9 @@
     "deleteInteractionTitle": "حذف التفاعل",
     "deleteSceneTitle": "حذف المشهد",
     "deleteSceneTextWithObjects": "سيؤدي حذف هذا المشهد إلى حذف جميع التفاعلات داخل المشهد وأي نقاط مركزية فعالة تشير إلى هذا المشهد. هل أنت متأكد أنك ترغب بحذف هذا المشهد؟",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }

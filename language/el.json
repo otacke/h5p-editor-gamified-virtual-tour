@@ -31,6 +31,9 @@
     "deleteSceneTitle": "Διαγραφή σκηνής",
     "deleteSceneText": "Σίγουρα θέλετε να διαγράψετε αυτή τη σκηνή;",
     "deleteSceneTextWithObjects": "Η διαγραφή αυτής της σκηνής θα διαγράψει επίσης όλες τις αλληλεπιδράσεις εντός της σκηνής και όλα τα σημεία πλοήγησης που δείχνουν σε αυτή τη σκηνή. Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή τη σκηνή;",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }

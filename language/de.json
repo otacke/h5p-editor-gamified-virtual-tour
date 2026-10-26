@@ -31,6 +31,9 @@
     "deleteSceneTitle": "Lösche Szene",
     "deleteSceneText": "Bist du sicher, dass du diese Szene löschen möchtest?",
     "deleteSceneTextWithObjects": "Wenn diese Szene gelöscht wird, werden auch alle Interaktionen in der Szene gelöscht. Dasselbe gilt für Hotspots, die auf die Szene zeigen. Bist du sicher, dass du diese Szene löschen möchtest?",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }

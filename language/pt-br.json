@@ -31,6 +31,9 @@
     "deleteSceneTitle": "Excluindo a cena",
     "deleteSceneText": "Você tem certeza que deseja excluir esta cena?",
     "deleteSceneTextWithObjects": "A exclusão desta cena também excluirá todas as interações dentro da cena e quaisquer pontos de acesso de navegação apontando para esta cena. Tem certeza que deseja excluir esta cena?",
-    "noNeighbors": "There are no other interactions in this scene that could be connected."
+    "noNeighbors": "There are no other interactions in this scene that could be connected.",
+    "path": "Path",
+    "deletePathTitle": "Removing path",
+    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected."
   }
 }
