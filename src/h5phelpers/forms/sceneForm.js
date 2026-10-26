@@ -41,7 +41,7 @@ export const createSceneForm = (field, params, wrapper, parent) => {
   const formChildren = parent.children;
 
   const sceneField = getSceneField(field);
-  const hiddenSceneFields = ['sceneId', 'cameraStartPosition', 'interactions', 'paths', 'overviewMapPosition'];
+  const hiddenSceneFields = ['sceneId', 'cameraStartPosition', 'interactions', 'paths', 'overviewMapMarker'];
 
   const sceneFields = sceneField.field.fields.filter((sceneField) => {
     return !hiddenSceneFields.includes(sceneField.name);
@@ -54,11 +54,11 @@ export const createSceneForm = (field, params, wrapper, parent) => {
   }
 
   /*
-   * The coordinate selector looks up the overview map image while being created, but processSemanticsChunk
-   * empties the children of the form meanwhile. Using a separate parent next to the form children
-   * lets the image field path `../behaviour/overviewMap/image` resolve.
+   * The coordinate selector of the marker group looks up the overview map image while being created, but
+   * processSemanticsChunk empties the children of the form meanwhile. Using a separate parent next to the
+   * form children lets the image field path `../../behaviour/overviewMap/image` resolve.
    */
-  const positionParent = {
+  const overviewMapParent = {
     parent: { children: formChildren },
     passReadies: false,
     children: [],
@@ -67,9 +67,9 @@ export const createSceneForm = (field, params, wrapper, parent) => {
     },
   };
 
-  const positionField = sceneField.field.fields.find((sceneField) => sceneField.name === 'overviewMapPosition');
-  H5PEditor.processSemanticsChunk([positionField], params, wrapper, positionParent);
-  parent.children.push(...positionParent.children);
+  const markerField = sceneField.field.fields.find((sceneField) => sceneField.name === 'overviewMapMarker');
+  H5PEditor.processSemanticsChunk([markerField], params, wrapper, overviewMapParent);
+  parent.children.push(...overviewMapParent.children);
 };
 
 /**
