@@ -89,6 +89,14 @@ const addBehavioralChangeListeners = (parent, callback) => {
   }
 
   sceneRendering.changes.push(callback);
+
+  const paths = behaviour.children.find((child) => {
+    return child.field.name === 'paths';
+  });
+
+  paths.children.forEach((child) => {
+    child.changes.push(callback);
+  });
 };
 
 /**
