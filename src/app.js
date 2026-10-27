@@ -4,9 +4,12 @@ import Main from '@components/Main.js';
 import { H5PContext } from '@context/H5PContext.js';
 import NeighborsSelector from '@src/widgets/NeighborsSelector.js';
 import ShowWhen from '@src/widgets/ShowWhen/ShowWhen.js';
+import ScoreRangeList from '@src/widgets/ScoreRangeList/ScoreRangeList.js';
 
 H5PEditor.widgets.gamifiedVirtualTourNeighbors = NeighborsSelector;
 H5PEditor.widgets.gamifiedVirtualTourShowWhen = ShowWhen;
+// List widgets are looked up directly in H5PEditor
+H5PEditor.GamifiedVirtualTourScoreRangeList = ScoreRangeList;
 
 /**
  * H5P content editor for gamified virtual tour.

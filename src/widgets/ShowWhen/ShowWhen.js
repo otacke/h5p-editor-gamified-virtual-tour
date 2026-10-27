@@ -1,6 +1,7 @@
 import RuleHandler from '@src/widgets/ShowWhen/RuleHandler.js';
 import SelectHandler from '@src/widgets/ShowWhen/FieldHandlers/SelectHandler.js';
 import BooleanHandler from '@src/widgets/ShowWhen/FieldHandlers/BooleanHandler.js';
+import LibraryHandler from '@src/widgets/ShowWhen/FieldHandlers/LibraryHandler.js';
 import '@src/widgets/ShowWhen/ShowWhen.css';
 
 /**
@@ -16,6 +17,9 @@ const createFieldHandler = (field, equals) => {
 
     case 'boolean':
       return new BooleanHandler(field, equals);
+
+    case 'library':
+      return new LibraryHandler(field, equals);
 
     default:
       return null;
