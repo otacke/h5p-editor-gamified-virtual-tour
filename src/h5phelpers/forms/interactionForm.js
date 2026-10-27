@@ -62,13 +62,9 @@ export const createInteractionForm = (
     '.h5peditor-copypaste-wrap',
   ];
 
-  // Remove semantics that we don't want to show
+  // Remove semantics that we don't want to show, only of interaction's library (not of nested library fields)
   hiddenSemanticsSelectors.forEach((selector) => {
-    const foundElement = wrapper.querySelector(`.field.library > ${selector}`);
-
-    if (foundElement) {
-      libraryWrapper.removeChild(foundElement);
-    }
+    libraryWrapper?.querySelector(`:scope > ${selector}`)?.remove();
   });
 };
 

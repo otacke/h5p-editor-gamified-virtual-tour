@@ -11,7 +11,6 @@
   .range {
     background: var(--h5p-theme-alternative-base);
     border: 1px solid var(--h5p-theme-stroke-1);
-    border-radius: var(--h5p-theme-border-radius-medium);
     padding: var(--h5p-theme-spacing-xs) var(--h5p-theme-spacing-s);
 
     &.h5p-error-range-overlap {

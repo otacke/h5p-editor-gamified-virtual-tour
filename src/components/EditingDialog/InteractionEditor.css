@@ -49,10 +49,6 @@
     display: none;
   }
 
-  .field.library .libwrap {
-    margin-top: 0;
-  }
-
   .semantics-wrapper {
     &.go-to-scene {
       margin-top: 0;
