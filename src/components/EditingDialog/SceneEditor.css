@@ -2,7 +2,7 @@
 
 .h5p-editing-dialog-header {
   .title.scene:before {
-    content: var(--icon-scene);
+    content: var(--icon-360image-scene);
     font-family: "360-image", sans-serif;
   }
 }

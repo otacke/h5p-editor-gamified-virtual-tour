@@ -14,7 +14,7 @@
 
     &:before {
       background: var(--h5p-theme-ui-base);
-      content: var(--icon-static-scene);
+      content: var(--icon-360image-static-scene);
       font-family: "360-image", sans-serif;
       font-size: calc(0.9 * var(--h5p-theme-font-size-m));
       left: calc(0.18 * var(--h5p-theme-spacing-s));
@@ -35,7 +35,7 @@
   }
 
   &.three-sixty .thumbnail-wrapper:before {
-    content: var(--icon-three-sixty-scene);
+    content: var(--icon-360image-three-sixty-scene);
   }
 
   .scene-wrapper {

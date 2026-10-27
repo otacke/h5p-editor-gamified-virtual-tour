@@ -7,7 +7,7 @@
   padding: var(--h5p-theme-spacing-xxs);
 
   &:before {
-    content: var(--icon-static-scene);
+    content: var(--icon-360image-static-scene);
     font-family: "360-image", sans-serif;
     font-size: var(--h5p-theme-font-size-xxl);
     margin: 0 calc(0.9 * var(--h5p-theme-spacing-s)) 0 calc(0.375 * var(--h5p-theme-spacing-s));
@@ -15,7 +15,7 @@
   }
 
   &.three-sixty:before {
-    content: var(--icon-three-sixty-scene);
+    content: var(--icon-360image-three-sixty-scene);
   }
 
   .h5p-scene-denotation {

@@ -34,7 +34,7 @@
       padding: var(--h5p-theme-spacing-xxs) calc(0.75 * var(--h5p-theme-spacing-s));
 
       &:before {
-        content: var(--icon-dropdown);
+        content: var(--icon-360image-dropdown);
         font-family: "360-image", sans-serif;
       }
     }

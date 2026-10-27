@@ -36,15 +36,15 @@
   }
 
   .set-start-scene:before {
-    content: var(--icon-set-start-scene);
+    content: var(--icon-360image-set-start-scene);
   }
 
   .jump:before {
-    content: var(--icon-go-to-scene);
+    content: var(--icon-360image-go-to-scene);
   }
 
   .edit:before {
-    content: var(--icon-edit);
+    content: var(--icon-360image-edit);
   }
 
   & button:not(:disabled) {
@@ -69,7 +69,7 @@
 
     &:before {
       color: var(--h5p-theme-feedback-incorrect-main);
-      content: var(--icon-delete);
+      content: var(--icon-360image-delete);
     }
 
     &:not(:disabled):hover {

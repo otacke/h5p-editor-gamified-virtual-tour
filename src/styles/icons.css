@@ -1,19 +1,29 @@
 .h5p-editor-gamified-virtual-tour-wrapper {
-  --icon-audio: '\f028';
-  --icon-delete: '\e910';
-  --icon-dropdown: '\e913';
-  --icon-edit: '\e90f';
-  /* 360-image */
-  --icon-go-to-scene: '\e907';
-  --icon-image: '\f03e';
-  --icon-image-slider: '\e921';
-  --icon-scene: '\e915';
-  --icon-set-start-scene: '\e914';
-  --icon-single-choice-set: '\e993';
-  --icon-static-scene: '\e90b';
-  /* H5PFontIcons */
-  --icon-summary: '\e992';
-  --icon-three-sixty-scene: '\e902';
-  /* H5PFontAwesome4 */
-  --icon-video: '\f008';
+  --icon-360image-delete: "\e910";
+  --icon-360image-dropdown: "\e913";
+  --icon-360image-edit: "\e90f";
+  --icon-360image-go-to-scene: "\e907";
+  --icon-360image-scene: "\e915";
+  --icon-360image-set-start-scene: "\e914";
+  --icon-360image-static-scene: "\e90b";
+  --icon-360image-three-sixty-scene: "\e902";
+  --icon-fontawesome-audio: "\f028";
+  --icon-fontawesome-coursepresentation: "\f022";
+  --icon-fontawesome-image: "\f03e";
+  --icon-fontawesome-multimediachoice: "\f009";
+  --icon-fontawesome-video: "\f008";
+  --icon-fontawesome-paper: "\f0f6";
+  --icon-h5pfonticons-blanks: "\e994";
+  --icon-h5pfonticons-dragquestion: "\e914";
+  --icon-h5pfonticons-dragtext: "\e602";
+  --icon-h5pfonticons-image-slider: "\e921";
+  --icon-h5pfonticons-imagehotspotquestion: "\e903";
+  --icon-h5pfonticons-interactivevideo: "\e980";
+  --icon-h5pfonticons-markthewords: "\e603";
+  --icon-h5pfonticons-memorygame: "\e919";
+  --icon-h5pfonticons-multichoice: "\e605";
+  --icon-h5pfonticons-questionset: "\e90b";
+  --icon-h5pfonticons-single-choice-set: "\e993";
+  --icon-h5pfonticons-summary: "\e992";
+  --icon-h5pfonticons-truefalse: "\e902";
 }
