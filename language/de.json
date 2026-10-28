@@ -31,12 +31,12 @@
     "deleteSceneTitle": "Lösche Szene",
     "deleteSceneText": "Bist du sicher, dass du diese Szene löschen möchtest?",
     "deleteSceneTextWithObjects": "Wenn diese Szene gelöscht wird, werden auch alle Interaktionen in der Szene gelöscht. Dasselbe gilt für Hotspots, die auf die Szene zeigen. Bist du sicher, dass du diese Szene löschen möchtest?",
-    "noNeighbors": "There are no other interactions in this scene that could be connected.",
-    "path": "Path",
-    "deletePathTitle": "Removing path",
-    "deletePathText": "Are you sure you wish to remove this path? The two interactions will no longer be connected.",
-    "distributeButtonLabel": "Distribute evenly",
-    "distributeButtonWarning": "Values will be changed for all of the ranges. Do you wish to proceed?",
-    "rangeOutOfSequenceWarning": "The score ranges are out of sequence"
+    "noNeighbors": "Es gibt keine anderen Interaktionen in dieser Szene, mit denen diese Interaktion verbunden werden könnte.",
+    "path": "Pfad",
+    "deletePathTitle": "LÖsche Pfad",
+    "deletePathText": "Bist du sicher, dass du diesen Pfad löschen möchtest? Die zwei Interaktionen werden nicht mehr verbunden sein.",
+    "distributeButtonLabel": "Gleichmäßig verteilen",
+    "distributeButtonWarning": "Die Werte werden für alle Wertebereiche verändert. Möchtest du fortfahren?",
+    "rangeOutOfSequenceWarning": "Die Wertebereiche sind nicht in korrekter Reihenfolge"
   }
 }
