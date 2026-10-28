@@ -41,9 +41,11 @@ export const getLibraryDataFromFields = async (field, library) => {
 export const isChildrenValid = (children) => {
   let isInputsValid = true;
 
-  // validate() should always run for all children because it adds
-  // styling to children that fails to validate
+  // validate() should always run for all children because it adds styling to children that fails to validate
   children.forEach((child) => {
+    if (child instanceof H5PEditor.Library && !child.validate()) {
+      return (!!child.$select && child.$select.get(0).value !== '-');
+    }
 
     // Special validation for scene image, since having a required image
     // is not supported by core yet
