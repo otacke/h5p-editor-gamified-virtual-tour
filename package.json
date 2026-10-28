@@ -1,7 +1,6 @@
 {
   "name": "h5p-editor-gamified-virtual-tour",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "webpack --mode=production",
